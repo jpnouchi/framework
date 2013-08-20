@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <p:dialog id="dlgPortalRolEmpresarial"
+              header="#{messages[jsfBean.dlgHeaderLabel]} #{messages.label_rol_empresarial_descripcion}"
+              modal="true"
+              widgetVar="wvPortalRolEmpresarial"
+              resizable="true" dynamic="true"
+              showEffect="fade" hideEffect="fade"
+              width="500" height="320">
+        <p:ajax event="close"  global="false"
+                immediate="true" process="@this"
+                listener="#{jsfBean.handleCloseDlg}"/>
+        <p:blockUI block="frmPortalRolEmpresarial" blocked="true" rendered="#{jsfBean.readOnly}"/>
+        <p:panel toggleable="false" toggleSpeed="250">
+            <ui:decorate template="/pages/sections/auditoriaDataSection.xhtml">
+                <ui:param name="bean" value="#{jsfBean.portalRolEmpresarialVm}"/>
+            </ui:decorate>
+        </p:panel>
+
+        <h:form id="frmPortalRolEmpresarial" prependId="true">
+            <h:panelGrid columns="5" rendered="#{not jsfBean.readOnly}">
+                <p:commandButton id="cmbGrabarRol" value="#{messages.label_save}"
+                                 actionListener="#{jsfBean.saveAction}" icon="ui-icon-copy"
+                                 update="pnlPortalRolEmpresarial"
+                                 ajax="true">
+                    <f:attribute name="dlgWv" value="wvPortalRolEmpresarial"/>
+                </p:commandButton>
+                <p:commandButton value="#{messages.label_close}" onclick="wvPortalRolEmpresarial.hide()"
+                                 immediate="true" process="@this" icon="ui-icon-close">
+                </p:commandButton>
+                <h:outputLabel value="#{messages.label_leyenda_camposObligatorios}"
+                               styleClass="leyenda-campoRequerido"/>
+            </h:panelGrid>
+            <p:panel id="pnlPortalRolEmpresarial" toggleable="false" toggleSpeed="250">
+                <h:panelGrid id="pngPortalRolEmpresarial" columns="2" styleClass="dialog" columnClasses="columna, columna">
+                	<h:outputLabel for="selPortalR" value="#{messages.label_portal}:"/>
+			         <h:panelGroup>
+				        <p:selectOneMenu id="selPortalR" value="#{jsfBean.portalRolEmpresarialVm.idPortal}"
+				                         panelStyle="width:150px"
+				                         effect="fade"
+				                         required="true"
+				                         style="width:160px">
+				            <f:selectItem itemLabel="#{messages.label_portal_select}" itemValue=""/>
+				            <f:selectItems value="#{jsfBean.lstPortalRegistro}" var="por"
+				                           itemLabel="#{por.descripcion}"
+				                           itemValue="#{por.idPortal}"/>
+				            <p:ajax update="txtOrdenReg" listener="#{jsfBean.handlePortalChange}" />  
+				        </p:selectOneMenu>
+				        <h:outputLabel styleClass="required-simbol" value="(*)"/>
+			        </h:panelGroup>
+                    <h:outputLabel styleClass="required_field" for="txIdComponente"
+                                   value="#{messages.label_id_componente}:"/>
+                    <h:panelGroup>
+                        <p:inputText id="txIdComponente" size="50" maxlength="100"
+                                     required="true"
+                                     value="#{jsfBean.portalRolEmpresarialVm.idComponente}"/>
+                        <h:outputLabel styleClass="required-simbol" value="(*)"/>
+                    </h:panelGroup>
+                    
+                     <h:outputLabel styleClass="required_field" for="txtDescripcionReg"
+                                   value="#{messages.label_descripcion}:"/>
+                    <h:panelGroup>
+                          <p:inputText id="txtDescripcionReg" size="50" maxlength="250"
+                                 required="true"
+                                 value="#{jsfBean.portalRolEmpresarialVm.descripcion}">
+                    	  </p:inputText>
+                        <h:outputLabel styleClass="required-simbol" value="(*)"/>
+                    </h:panelGroup>
+                    
+                   
+                    <h:outputLabel styleClass="required_field" for="txtDescripcionCortaReg"
+                                   value="#{messages.label_descripcion_corta}:"/>
+                    <h:panelGroup>
+	                    <p:inputText id="txtDescripcionCortaReg" size="50" maxlength="50"
+	                                 required="true"
+	                                 value="#{jsfBean.portalRolEmpresarialVm.descripcionCorta}">
+	                                 <h:outputLabel styleClass="required-simbol" value="(*)"/>
+	                    </p:inputText>
+                    </h:panelGroup>
+                    
+                     <h:outputLabel styleClass="required_field" for="txtOrdenReg"
+                                   value="#{messages.label_orden}:"/>
+                    <h:panelGroup>
+	                     <h:outputLabel id="txtOrdenReg"
+                                   value="#{jsfBean.portalRolEmpresarialVm.orden}"/>  
+	                     <h:outputLabel styleClass="required-simbol" value="(*)"/>
+                    </h:panelGroup>
+                    
+                     <h:outputLabel styleClass="required_field" for="txtPrioridad"
+                                   value="#{messages.label_prioridad}:"/>
+                    <h:panelGroup>
+	                   <p:selectBooleanButton id="txtPrioridad" value="#{jsfBean.portalRolEmpresarialVm.prioridad}" required="true"
+	                    onLabel="Si" offLabel="No" />
+	                    <h:outputLabel styleClass="required-simbol" value="(*)"/>
+                    </h:panelGroup>
+                    
+                    <h:outputLabel styleClass="required_field" for="txtEstadoReg"
+                                   value="#{messages.label_estado}:"/>
+                    <h:panelGroup>
+	                   <p:selectBooleanButton id="txtEstadoReg" value="#{jsfBean.portalRolEmpresarialVm.rendered}" required="true"
+	                    onLabel="True" offLabel="False" />
+	                    <h:outputLabel styleClass="required-simbol" value="(*)"/>
+                    </h:panelGroup>
+                    
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </p:dialog>
+</ui:composition>

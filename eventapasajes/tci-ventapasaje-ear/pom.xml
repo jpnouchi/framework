@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+		<groupId>com.tci.ventapasaje</groupId>
+		<artifactId>tci-ventapasaje</artifactId>
+		<version>1.0.0</version>
+	</parent>
+    <artifactId>tci-ventapasaje-ear</artifactId>
+    <name>TCI - Portal Venta de Pasajes EAR</name>
+    <packaging>ear</packaging>
+    <description>TCI - Portal Venta de Pasajes - Modulo EAR</description>
+	
+	<properties>
+        <java.version>1.6</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>3.1.2.RELEASE</spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.tci.ventapasaje</groupId>
+            <artifactId>tci-ventapasaje-war</artifactId>
+            <version>1.0.0</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+		<finalName>${tci.earname}</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <displayName>Portal - Modulo EAR</displayName>
+                    <description>Portal - Modulo EAR</description>
+                    <version>1.3</version>
+                    <modules>
+                        <webModule>
+							<groupId>com.tci.ventapasaje</groupId>
+							<artifactId>tci-ventapasaje-war</artifactId>
+                            <contextRoot>${tci.context}</contextRoot>
+                            <bundleFileName>tci-ventapasaje.war</bundleFileName>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: koen
+Build-Jdk: 1.7.0_06
+Specification-Title: Hibernate Tools
+Specification-Version: 4.0.0-CR1
+Specification-Vendor: Hibernate
+Implementation-Title: Hibernate Tools
+Implementation-Version: 4.0.0-CR1
+Implementation-Vendor-Id: org.hibernate
+Implementation-Vendor: Hibernate
+Implementation-URL: http://www.hibernate.org/subprojects/tools.html
+
+Name: Build-Information
+Os-Name: Mac OS X
+Java-Version: 1.7.0_06
+Scm-Url: scm:git:git@github.com:hibernate/hibernate-tools.git
+Java-Vendor: Oracle Corporation
+Os-Version: 10.7.4
+Os-Arch: x86_64
+

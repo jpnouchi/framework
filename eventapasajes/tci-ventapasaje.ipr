@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project version="4"> 
+  <component name="ArtifactManager"> 
+    <artifact type="war" name="tci-ventapasaje-war:tci-ventapasaje-war exploded"> 
+      <output-path>$PROJECT_DIR$/tci-ventapasaje-war/target</output-path>  
+      <root id="archive" name="tci-ventapasaje-war_tci-ventapasaje-war exploded.war"> 
+        <element id="javaee-facet-resources" facet="tci-ventapasaje-war/web/tci-ventapasaje-war"/>  
+        <element id="directory" name="WEB-INF"> 
+          <element id="directory" name="classes"> 
+            <element id="module-output" name="tci-ventapasaje-war"/> 
+          </element>  
+          <element id="directory" name="lib"> 
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/guava/14.0.1/guava-14.0.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-test/3.1.2.RELEASE/spring-test-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/blitzer/1.0.9/blitzer-1.0.9.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hessian/3.1.5/hessian-3.1.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/thymeleaf-spring3/2.0.14/thymeleaf-spring3-2.0.14.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/com/tci/core/tci-core-web/1.0.0/tci-core-web-1.0.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/com/tci/core/tci-core-domain/1.0.0/tci-core-domain-1.0.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-lang3/3.0.1/commons-lang3-3.0.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-collections/3.2/commons-collections-3.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-aspects/3.1.2.RELEASE/spring-aspects-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-ws-core/2.1.2.RELEASE/spring-ws-core-2.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-data-jpa/1.2.0.RELEASE/spring-data-jpa-1.2.0.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-core/4.1.10.Final/hibernate-core-4.1.10.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-entitymanager/4.1.10.Final/hibernate-entitymanager-4.1.10.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-tools/4.0.0-CR1/hibernate-tools-4.0.0-CR1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/quartz/1.6.3/quartz-1.6.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/mail/1.4.4/mail-1.4.4.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/poi/3.7/poi-3.7.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/itext/2.1.7/itext-2.1.7.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jasperreports/4.8.0/jasperreports-4.8.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-security-config/3.0.7.RELEASE/spring-security-config-3.0.7.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/log4j/1.2.16/log4j-1.2.16.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/slf4j-api/1.6.2/slf4j-api-1.6.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/slf4j-log4j12/1.6.2/slf4j-log4j12-1.6.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-context-support/3.1.2.RELEASE/spring-context-support-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-data-commons-core/1.4.0.RELEASE/spring-data-commons-core-1.4.0.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-jdbc/3.1.2.RELEASE/spring-jdbc-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-orm/3.1.2.RELEASE/spring-orm-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-oxm/3.1.3.RELEASE/spring-oxm-3.1.3.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-security-core/3.0.7.RELEASE/spring-security-core-3.0.7.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-security-web/3.0.7.RELEASE/spring-security-web-3.0.7.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-tx/3.1.2.RELEASE/spring-tx-3.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-web/3.1.3.RELEASE/spring-web-3.1.3.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-webmvc/3.1.3.RELEASE/spring-webmvc-3.1.3.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/spring-xml/2.1.2.RELEASE/spring-xml-2.1.2.RELEASE.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/aspectjrt/1.6.12/aspectjrt-1.6.12.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-lang/2.5/commons-lang-2.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/aopalliance/1.0/aopalliance-1.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/activation/1.1/activation-1.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/ant/1.6.5/ant-1.6.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/antlr/2.7.7/antlr-2.7.7.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/castor/1.2/castor-1.2.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commands/3.3.0-I20070605-0010/commands-3.3.0-I20070605-0010.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/common/3.2.0-v20060603/common-3.2.0-v20060603.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-codec/1.3/commons-codec-1.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-digester/2.1/commons-digester-2.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-pool/1.5.4/commons-pool-1.5.4.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/contenttype/3.2.100-v20070319/contenttype-3.2.100-v20070319.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/dom4j/1.6.1/dom4j-1.6.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/freemarker/2.3.8/freemarker-2.3.8.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/geronimo-stax/api_1.0_spec-1.0/geronimo-stax-api_1.0_spec-1.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jackson-annotations/2.0.5/jackson-annotations-2.0.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jackson-core/2.0.5/jackson-core-2.0.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jackson-databind/2.0.5/jackson-databind-2.0.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/javassist/3.16.1-GA/javassist-3.16.1-GA.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jcommon/1.0.15/jcommon-1.0.15.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jdtcore/3.1.0/jdtcore-3.1.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jfreechart/1.0.12/jfreechart-1.0.12.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jobs/3.3.0-v20070423/jobs-3.3.0-v20070423.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jta/1.1/jta-1.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jtidy/r8-20060801/jtidy-r8-20060801.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/myfaces-impl/2.1.3/myfaces-impl-2.1.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/ognl/3.0.5/ognl-3.0.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/osgi/3.3.0-v20070530/osgi-3.3.0-v20070530.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/poi-ooxml/3.7/poi-ooxml-3.7.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/poi-ooxml-schemas/3.7/poi-ooxml-schemas-3.7.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/preferences/3.2.100-v20070522/preferences-3.2.100-v20070522.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/registry/3.3.0-v20070522/registry-3.3.0-v20070522.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/runtime/3.2.0-v20060603/runtime-3.2.0-v20060603.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/stax-api/1.0.1/stax-api-1.0.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/text/3.2.0-v20060605-1400/text-3.2.0-v20060605-1400.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/wsdl4j/1.6.1/wsdl4j-1.6.1.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/xmlbeans/2.3.0/xmlbeans-2.3.0.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/myfaces-api/2.1.3/myfaces-api-2.1.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/primefaces/3.5/primefaces-3.5.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/thymeleaf/2.0.14/thymeleaf-2.0.14.jar"/>  
+            <element id="archive" name="tci-ventapasaje-domain-1.0.0.jar"> 
+              <element id="module-output" name="tci-ventapasaje-domain"/> 
+            </element>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/commons-dbcp/1.3/commons-dbcp-1.3.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/mysql-connector-java/5.1.20/mysql-connector-java-5.1.20.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/junit-dep/4.9/junit-dep-4.9.jar"/>  
+            <element id="file-copy" path="C:/m2/repository/tci/net/pe/framework/jmock-junit4/2.5.1/jmock-junit4-2.5.1.jar"/>  
+            <element id="library" level="module" name="el-api" module-name="tci-ventapasaje-war"/> 
+          </element> 
+        </element> 
+      </root> 
+    </artifact> 
+  </component>  
+  <component name="CodeStyleManager"> 
+    <option name="USE_DEFAULT_CODE_STYLE_SCHEME" value="true"/>  
+    <option name="CODE_STYLE_SCHEME" value=""/> 
+  </component>  
+  <component name="CompilerConfiguration"> 
+    <option name="DEFAULT_COMPILER" value="Javac"/>  
+    <resourceExtensions/>  
+    <annotationProcessing> 
+      <profile default="true" name="Default" enabled="false"> 
+        <processorPath useClasspath="true"/> 
+      </profile> 
+    </annotationProcessing>  
+    <wildcardResourcePatterns>
+      <entry name="!?*.java"/>
+    </wildcardResourcePatterns>
+  </component>  
+  <component name="CopyrightManager" default=""> 
+    <module2copyright/> 
+  </component>  
+  <component name="DependencyValidationManager"> 
+    <option name="SKIP_IMPORT_STATEMENTS" value="false"/> 
+  </component>  
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false"/>  
+  <component name="EntryPointsManager"> 
+    <entry_points version="2.0"/> 
+  </component>  
+  <component name="ExportToHTMLSettings"> 
+    <option name="PRINT_LINE_NUMBERS" value="false"/>  
+    <option name="OPEN_IN_BROWSER" value="false"/>  
+    <option name="OUTPUT_DIRECTORY"/> 
+  </component>  
+  <component name="IdProvider" IDEtalkID="E462D94F6B9128FEB6B26CFFF513581B"/>  
+  <component name="ImportConfiguration"> 
+    <option name="VENDOR"/>  
+    <option name="RELEASE_TAG"/>  
+    <option name="LOG_MESSAGE"/>  
+    <option name="CHECKOUT_AFTER_IMPORT" value="true"/> 
+  </component>  
+  <component name="JUnitProjectSettings"> 
+    <option name="TEST_RUNNER" value="UI"/> 
+  </component>  
+  <component name="JavadocGenerationManager"> 
+    <option name="OUTPUT_DIRECTORY"/>  
+    <option name="OPTION_SCOPE" value="protected"/>  
+    <option name="OPTION_HIERARCHY" value="false"/>  
+    <option name="OPTION_NAVIGATOR" value="false"/>  
+    <option name="OPTION_INDEX" value="false"/>  
+    <option name="OPTION_SEPARATE_INDEX" value="false"/>  
+    <option name="OPTION_USE_1_1" value="false"/>  
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false"/>  
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false"/>  
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false"/>  
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="false"/>  
+    <option name="OPTION_DEPRECATED_LIST" value="false"/>  
+    <option name="OTHER_OPTIONS"/>  
+    <option name="HEAP_SIZE"/>  
+    <option name="OPEN_IN_BROWSER" value="false"/> 
+  </component>  
+  <component name="JikesSettings"> 
+    <option name="DEBUGGING_INFO" value="true"/>  
+    <option name="DEPRECATION" value="true"/>  
+    <option name="GENERATE_NO_WARNINGS" value="false"/>  
+    <option name="GENERATE_MAKE_FILE_DEPENDENCIES" value="false"/>  
+    <option name="DO_FULL_DEPENDENCE_CHECK" value="false"/>  
+    <option name="IS_INCREMENTAL_MODE" value="false"/>  
+    <option name="IS_EMACS_ERRORS_MODE" value="true"/>  
+    <option name="ADDITIONAL_OPTIONS_STRING" value=""/>  
+    <option name="MAXIMUM_HEAP_SIZE" value="128"/> 
+  </component>  
+  <component name="Palette2"> 
+    <group name="Swing"> 
+      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1"/> 
+      </item>  
+      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2"/> 
+      </item>  
+      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3"/> 
+      </item>  
+      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true"> 
+        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3"/> 
+      </item>  
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1"/>  
+        <initial-values> 
+          <property name="text" value="Button"/> 
+        </initial-values> 
+      </item>  
+      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0"/>  
+        <initial-values> 
+          <property name="text" value="RadioButton"/> 
+        </initial-values> 
+      </item>  
+      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0"/>  
+        <initial-values> 
+          <property name="text" value="CheckBox"/> 
+        </initial-values> 
+      </item>  
+      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0"/>  
+        <initial-values> 
+          <property name="text" value="Label"/> 
+        </initial-values> 
+      </item>  
+      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1"> 
+          <preferred-size width="150" height="-1"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1"> 
+          <preferred-size width="150" height="-1"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1"> 
+          <preferred-size width="150" height="-1"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1"/> 
+      </item>  
+      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"> 
+          <preferred-size width="150" height="50"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3"> 
+          <preferred-size width="200" height="200"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3"> 
+          <preferred-size width="200" height="200"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1"/> 
+      </item>  
+      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1"/> 
+      </item>  
+      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3"/> 
+      </item>  
+      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1"/> 
+      </item>  
+      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1"> 
+          <preferred-size width="-1" height="20"/> 
+        </default-constraints> 
+      </item>  
+      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false"> 
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1"/> 
+      </item>  
+      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false"> 
+        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2"/> 
+      </item> 
+    </group> 
+  </component>  
+  <component name="ProjectModuleManager"> 
+    <modules> 
+      <module filepath="$PROJECT_DIR$/tci-ventapasaje.iml"/>
+      <module filepath="$PROJECT_DIR$/tci-ventapasaje-domain/tci-ventapasaje-domain.iml"/>
+      <module filepath="$PROJECT_DIR$/tci-ventapasaje-ear/tci-ventapasaje-ear.iml"/>
+      <module filepath="$PROJECT_DIR$/tci-ventapasaje-war/tci-ventapasaje-war.iml"/>
+    </modules> 
+  </component>  
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6"/>  
+  <component name="SvnBranchConfigurationManager"> 
+    <option name="mySupportsUserInfoFilter" value="true"/> 
+  </component>  
+  <component name="VcsDirectoryMappings"> 
+    <mapping directory="" vcs="svn"/> 
+  </component> 
+</project>

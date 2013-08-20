@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:toolbarGroup align="right">
+        <!--<p:commandLink ajax="false" rendered="#{exportToCsv}">-->
+                 <!--<p:graphicImage value="../resources/images/csv.png" width="22px" height="22px"/>-->
+                 <!--<p:dataExporter type="csv" target="#{targetTableId}" fileName="#{fileName}" encoding="CP1252"/>-->
+             <!--</p:commandLink>-->
+
+             <p:commandLink ajax="false"  rendered="#{exportToExcel}">
+                 <p:graphicImage value="../../resources/images/excel.png" width="20px" height="20px"
+                                 title="#{messages.label_export_xls_filters_result}"/>
+                 <p:dataExporter type="xls" target="#{targetTableId}" fileName="#{fileName}" encoding="UTF-8"
+                                 preProcessor="#{pageJsfBean.preProcessExportExcel}"/>
+             </p:commandLink>
+
+             <p:commandLink ajax="false" rendered="#{exportToPdf}">
+                 <p:graphicImage value="../../resources/images/pdf.png" width="20px" height="20px"
+                                 title="#{messages.label_export_pdf_filters_result}"/>
+                 <p:dataExporter type="pdf" target="#{targetTableId}" fileName="#{fileName}" encoding="CP1252"
+                                 preProcessor="#{pageJsfBean.preProcessExportPdf}"/>
+             </p:commandLink>
+    </p:toolbarGroup>
+
+</ui:composition>
+
+
+

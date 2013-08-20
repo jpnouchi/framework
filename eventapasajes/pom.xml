@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- AgileWorks @2013 -->
+    <modelVersion>4.0.0</modelVersion>
+	
+    <groupId>com.tci.ventapasaje</groupId>
+    <artifactId>tci-ventapasaje</artifactId>
+    <version>1.0.0</version>
+	
+    <name>TCI - Venta de Pasajes Online</name>
+    <packaging>pom</packaging>
+    <description>TCI - Venta de Pasajes Online</description>
+
+    <modules>
+		<module>tci-ventapasaje-domain</module>
+		<module>tci-ventapasaje-ear</module>
+		<module>tci-ventapasaje-war</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <resources>
+            <!-- all children src/main/resources directories will now be filtered -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+		<plugins>
+			<!-- set this project compiler to jdk version 1.6 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+    </build>
+	
+	<dependencies>
+	
+		</dependencies>
+    <repositories>
+        <!--
+		<repository>
+		 <id>spring-snapshot</id>
+		<url>http://repo.springsource.org/libs-snapshot</url>
+			<releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+		</repository>
+		
+		<repository>
+            <id>tcipublic</id>
+            <url>http://192.168.1.36:8081/nexus/content/repositories/tcipublic</url>
+        </repository>
+	
+
+		 <repository>
+            <id>jboss</id>
+            <url>http://192.168.1.36:8081/nexus/content/repositories/jboss/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+		-->
+    </repositories>
+</project>

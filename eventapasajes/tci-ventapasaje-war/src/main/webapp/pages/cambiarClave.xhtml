@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../templates/layout.xhtml">
+<ui:define name="title">#{messages.label_cambio_password}</ui:define>
+<ui:define name="content">
+
+</ui:define>
+
+<ui:define name="modal">
+    <p:dialog id="dlgCambioPassword" header="#{messages.label_cambio_password}"
+              modal="true" widgetVar="dlgCambioPassword" resizable="false"
+              showEffect="fade" appendToBody="true" width="400"  closable="false" visible="true">
+        <p:ajax event="close" global="false" update=":formCambioPassword:pnlCambioPassword" listener="#{loginNuevoBeanJsfBean.handleDialogClose}"/>
+
+     <h:form id="formCambioPassword" >
+
+
+       <p:panel id="pnlCambioPassword" widgetVar="pnlCambioPassword" toggleable="false" toggleSpeed="250" style="align:center" >
+
+              <table border="0">
+                                <tr>
+                                    <td colspan="2">
+                                        <p:toolbar styleClass="actions-toolbar" >
+                                            <p:toolbarGroup align="left">
+                                                <p:commandButton actionListener="#{loginNuevoBeanJsfBean.actualizarPassword}" value="#{messages.label_button_change_password}"
+                                                        update=":dlgMessageErrorsCambioPassword"/>
+                                                <p:button value="#{messages.label_logout}" href="/j_spring_security_logout" ></p:button>
+                                            </p:toolbarGroup>
+
+                                        </p:toolbar>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><label class="style2"><h:outputText value="#{messages.property_user}" styleClass="columna"/> *</label></td>
+                                    <td><h:inputText id="j_username" name="j_username" value="#{loginNuevoBeanJsfBean.user}"
+                                         disabled="true"/>
+                                        </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <td><label class="style2"><h:outputText value="#{messages.property_oldPassword}" styleClass="columna"/> *</label></td>
+                                    <td><p:password id="j_oldPassword"  value="#{loginNuevoBeanJsfBean.oldPassword}" redisplay="true" feedback="false"
+                                                        disabled="true" />
+                                        </td>
+
+                                </tr>
+                                 <tr>
+                                    <td><label class="style2"><h:outputText value="#{messages.property_newPassword}" styleClass="columna"/> *</label></td>
+                                    <td><p:password id="j_newPassword"  value="#{loginNuevoBeanJsfBean.newPassword}" redisplay="true" feedback="false" onkeyup="runPassword('#{loginNuevoBean.user}', this.value, 'pwdpassword1','nivelFortaleza1');"  />
+                                        </td>
+
+                                </tr>
+                                 <tr>
+                                    <td><label class="style2"><h:outputText value="#{messages.property_confirmNewPassword}" styleClass="columna"/> *</label></td>
+                                    <td><p:password id="j_confirmNewPassword"   value="#{loginNuevoBeanJsfBean.confirmNewPassword}" redisplay="true" feedback="false"/>
+                                        </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">
+                                           <label class="style2"> <h:outputText value="#{messages.label_required_fields}" styleClass="columna"/></label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">
+                                            <div id="pwdpassword1_text" style="font-size: 12px;"></div>
+					                        <div id="pwdpassword1_bar" style="font-size: 1px; height: 2px; width: 0px;"></div>
+                                            <input type="hidden" id="nivelFortaleza1" name="nivelFortaleza1" > </input>
+                                    </td>
+                                </tr>
+
+
+              </table>
+
+
+              <br/>
+
+
+        </p:panel>
+
+      </h:form>
+
+  </p:dialog>
+
+    <p:dialog id="dlgMessageErrorsCambioPassword"
+				header="#{messages.listadoComprobante_titulo_informacion}"
+				modal="true" widgetVar="dlgMessageErrorsCambioPassword" resizable="false"
+				showEffect="fade" appendToBody="true" width="250">
+        			<h:panelGrid id="pnlMessageErrors" columns="1" styleClass="dialog">
+					<h:outputText value="#{loginNuevoBeanJsfBean.errores}" />
+				</h:panelGrid>
+				<br />
+				<p:commandButton value="#{messages.label_aceptar}"
+					onclick="dlgMessageErrorsCambioPassword.hide()" type="button" />
+			</p:dialog>
+</ui:define>
+
+
+
+</ui:composition>
+</html>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+	<h:outputScript library="js" name="busUtil.js"/>
+    <ui:param name="jsfBean" value="#{fnFlujoCompraPaso2JsfBean}"/>
+    <p:spacer width="5" height="20" />
+    <h:outputLabel value="#{messages.label_title_paso2}" style="color:#2d2f3b; font-size:15px;font-weight: bold;"/>
+    
+       <h:panelGrid columns="2">
+	       <p:commandButton value="#{messages.label_formularioPaso2_irPaso3}" icon="ui-icon-search"
+	                        actionListener="#{jsfBean.dirigirPaso3}"
+	                        update=":frmMain :pnlMenu"
+	                        ajax="true"/>
+	
+	       <p:commandButton value="#{messages.label_formularioPaso2_irPaso1}" icon="ui-icon-refresh"
+	                        process="@none"
+	                        update=":frmMain :pnlMenu"
+	                        actionListener="#{jsfBean.dirigirPaso1}"
+	                        ajax="true"/>
+        </h:panelGrid>
+    
+    <p:fieldset legend="#{messages.label_formularioPaso2_legenda}">
+    	
+    </p:fieldset>
+    
+    
+        <p:panel id="pnlBusesFlujoCompraPaso2" toggleable="false" toggleOrientation="vertical"
+             toggleTitle="#{messages.label_header_fn_portal}"
+             toggleSpeed="250">
+	        <table>
+	        	<tr>
+	        		<td>
+	        			<canvas id="canvasBusIda"></canvas>
+	        		</td>
+	        		<td>
+	        			<canvas id="canvasBusRetorno"></canvas>
+	        		</td>
+	        	</tr>
+	        </table>
+        </p:panel>
+    <p:panel id="pnlResumenFlujoCompraPaso2" toggleable="false" toggleOrientation="vertical"
+             toggleTitle="#{messages.label_header_fn_portal}"
+             toggleSpeed="250">
+        <f:facet name="header">
+            <h:outputLabel styleClass="header_title" value="#{messages.label_formularioPaso2_resumen}"/>
+        </f:facet>
+        
+        <table>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_resumen_forma_pago}:"/>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" />
+					<p:selectOneMenu id="selFormaPago" value="#{jsfBean.asientoPasajeroVm.formaPago}"
+		                             effect="fade" style="width:150px;" disabled="true">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.formaPagoList}" var="varFormaPago" itemLabel="#{varFormaPago.valor}" itemValue="#{varFormaPago.codigo}" />
+		            </p:selectOneMenu>
+		            
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_resumen_tipo_tarjeta}:"/>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" />
+					<p:selectOneMenu id="selTipoTarjeta" value="#{jsfBean.asientoPasajeroVm.tipoTarjeta}"
+		                             effect="fade" style="width:150px;" disabled="true" >
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.tipoTarjetaList}" var="varTipoTarjeta" itemLabel="#{varTipoTarjeta.valor}" itemValue="#{varTipoTarjeta.codigo}" />
+		            </p:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_resumen_monto_total}:"/>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel id="idMontoTotal" value="#{jsfBean.asientoPasajeroVm.montoTotal}"/>
+					
+				</td>
+				<td>
+				</td>
+				<td colspan="2">
+					<p:spacer width="5" height="5" />
+					<p:selectBooleanCheckbox value="#{jsfBean.asientoPasajeroVm.terminosCondiciones}" />  
+					<p:commandLink id="idTerminosCondiciones"  style="margin-right:20px;" ajax="false">  
+				        <h:outputText value="#{messages.label_formularioPaso2_resumen_terminos_y_condiciones}" />  
+				    </p:commandLink>
+				</td>
+				
+			</tr>
+		</table>
+	</p:panel>
+    
+    
+    <p:panel id="pnlPasajeroFlujoCompraPaso2" toggleable="false" toggleOrientation="vertical"
+             toggleTitle="#{messages.label_header_fn_portal}"
+             toggleSpeed="250">
+        <f:facet name="header">
+            <h:outputLabel styleClass="header_title" value="#{messages.label_formularioPaso2_datos_pasajero}"/>
+        </f:facet>
+        
+        <table>
+        		<tr>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" />
+					
+					<p:selectBooleanCheckbox value="#{jsfBean.asientoPasajeroVm.pasajeroVm.pasajeroMismoCliente}">  
+			            <p:ajax update="pnlPasajeroFlujoCompraPaso2" listener="#{jsfBean.copyUserDataToCustomer}"/>  
+			        </p:selectBooleanCheckbox>
+			        <h:outputText value="#{messages.label_formularioPaso2_pasajero_mismo_cliente}" />    
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" />
+					<p:commandLink id="idLugarRecojoBoleto"  style="margin-right:20px;" ajax="false">  
+				        <h:outputText value="#{messages.label_formularioPaso2_lugares_recojo_boleto}" />  
+				    </p:commandLink>
+				</td>
+				<td>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_tipo_documento}"/>
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_numero_documento}"/>
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_email}"/>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" />
+					<p:selectOneMenu id="selTipoDocumento" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.tipoDocumento}"
+		                             effect="fade" style="width:150px;">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.tipoDocumentoList}" var="varTipoDocumento" itemLabel="#{varTipoDocumento.valor}" itemValue="#{varTipoDocumento.idConfiguracion}" />
+		            </p:selectOneMenu>
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><p:inputText id="idNumeroDocumento" size="30" maxlength="12" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.numeroDocumento}" />
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><p:inputText id="idEmail" size="30" maxlength="50" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.email}" />
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_nombres}"/>
+				</td>
+				<td>
+					
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_apellido_paterno}"/>
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_apellido_materno}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><p:inputText id="idNombre" size="30" maxlength="50" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.nombres}" />
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><p:inputText id="idApellidoPaterno" size="30" maxlength="50" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.apellidoPaterno}" />
+				</td>
+				<td>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><p:inputText id="idApellidoMaterno" size="30" maxlength="50" value="#{jsfBean.asientoPasajeroVm.pasajeroVm.apellidoMaterno}" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel value="#{messages.label_formularioPaso2_pasajero_preferencias_alimentarias}"/>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" />
+					<p:selectOneMenu id="selPreferenciaAlimentaria" value="#{jsfBean.asientoPasajeroVm.preferenciaViaje}"
+		                             effect="fade" style="width:150px;">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.preferenciaAlimentariaList}" var="varPreferenciaAlimentaria" itemLabel="#{varPreferenciaAlimentaria.valor}" itemValue="#{varPreferenciaAlimentaria.idConfiguracion}" />
+		            </p:selectOneMenu>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+
+    </p:panel>
+    
+    <h:inputHidden value="#{jsfBean.asientoPasajeroVm.asientoSeleccionadoBusIdaFila}" id="BusIdaFilaSeleccionada" />
+    <h:inputHidden value="#{jsfBean.asientoPasajeroVm.asientoSeleccionadoBusIdaColumna}" id="BusIdaColumnaSeleccionada" />
+    <h:inputHidden value="#{jsfBean.asientoPasajeroVm.asientoSeleccionadoBusRetornoFila}" id="BusRetornoFilaSeleccionada" />
+    <h:inputHidden value="#{jsfBean.asientoPasajeroVm.asientoSeleccionadoBusRetornoColumna}" id="BusRetornoColumnaSeleccionada" />
+    
+    <h:inputHidden  id="numeroFilasColumnasBusIda" />
+    <h:inputHidden  id="numeroFilasColumnasBusRetorno" />
+    
+    <h:inputHidden value="#{jsfBean.jsonBusIda}" id="jsonBusIda" />
+    <h:inputHidden value="#{jsfBean.jsonBusRetorno}" id="jsonBusRetorno" />
+    
+    
+    <script type="text/javascript">
+    	window.onload = drawBus('canvasBusIda','jsonBusIda','numeroFilasColumnasBusIda');
+    	window.onload = drawBus('canvasBusRetorno','jsonBusRetorno','numeroFilasColumnasBusRetorno');
+    </script>
+
+</ui:composition>

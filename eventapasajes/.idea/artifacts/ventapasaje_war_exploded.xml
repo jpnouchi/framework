@@ -1,0 +1,117 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ventapasaje:war exploded">
+    <output-path>$PROJECT_DIR$/tci-ventapasaje-war/target/tci-ventapasaje.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="tci-ventapasaje-war/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="tci-ventapasaje-war" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.tci.core:tci-core-web:1.0.0" />
+          <element id="library" level="project" name="Maven: com.tci.core:tci-core-domain:1.0.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-lang3:3.0.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-collections:3.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-core:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-context:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-aop:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-aspects:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-ws-core:2.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-data-jpa:1.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-core:4.1.10.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-entitymanager:4.1.10.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-jpa-2.0-api:1.0.1.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-validator:4.2.0.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-tools:4.0.0-CR1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:validation-api:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:cglib-nodep:2.2.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:quartz:1.6.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:mail:1.4.4" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:poi:3.7" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:itext:2.1.7" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jasperreports:4.8.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-security-config:3.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:log4j:1.2.16" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:slf4j-api:1.6.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:slf4j-log4j12:1.6.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-beans:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-asm:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-context-support:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-data-commons-core:1.4.0.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-expression:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-jdbc:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-orm:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-oxm:3.1.3.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-security-core:3.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-security-web:3.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-tx:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-web:3.1.3.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-webmvc:3.1.3.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-xml:2.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hibernate-commons-annotations:4.0.1.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:aspectjrt:1.6.12" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-lang:2.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:activation:1.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:ant:1.6.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:antlr:2.7.7" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:aspectjweaver:1.6.8" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:bcmail-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:bcprov-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:bctsp-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:castor:1.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commands:3.3.0-I20070605-0010" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:common:3.2.0-v20060603" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-beanutils:1.8.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-codec:1.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-digester:2.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:contenttype:3.2.100-v20070319" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:freemarker:2.3.8" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:geronimo-stax:api_1.0_spec-1.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jackson-annotations:2.0.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jackson-core:2.0.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jackson-databind:2.0.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:javassist:3.16.1-GA" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jboss-logging:3.1.0.GA" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jboss-transaction-api_1.1_spec:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jcl-over-slf4j:1.6.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jcommon:1.0.15" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jdtcore:3.1.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jfreechart:1.0.12" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jobs:3.3.0-v20070423" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jta:1.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:jtidy:r8-20060801" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:myfaces-impl:2.1.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:ognl:3.0.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:osgi:3.3.0-v20070530" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:poi-ooxml:3.7" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:poi-ooxml-schemas:3.7" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:preferences:3.2.100-v20070522" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:registry:3.3.0-v20070522" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:runtime:3.2.0-v20060603" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:text:3.2.0-v20060605-1400" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:wsdl4j:1.6.1" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:xmlbeans:2.3.0" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:myfaces-api:2.1.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:primefaces:3.5" />
+          <element id="archive" name="tci-ventapasaje-domain-1.0.0.jar">
+            <element id="module-output" name="tci-ventapasaje-domain" />
+          </element>
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-dbcp:1.3" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:mysql-connector-java:5.1.20" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:thymeleaf:2.0.14" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:thymeleaf-spring3:2.0.14" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:blitzer:1.0.9" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:hessian:3.1.5" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:commons-fileupload:1.2.2" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:spring-test:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: tci.net.pe.framework:guava:14.0.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

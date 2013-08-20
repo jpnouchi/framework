@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:param name="jsfBean" value="#{fnPortalRolEmpresarialJsfBean}"/>
+    <p:panel id="pnlCriteriaPortalRolEmpresarial" toggleable="true" toggleOrientation="vertical"
+             toggleTitle="#{messages.label_header_fn_rol_empresarial}"
+             toggleSpeed="250">
+        <f:facet name="header">
+            <h:outputLabel styleClass="header_title" value="#{messages.label_header_fn_rol_empresarial}"/>
+        </f:facet>
+        <f:facet name="actions">
+            <p:toolbar styleClass="export-toolbar">
+                <ui:decorate template="/pages/sections/dataAndFiltersExporterToolBarGroupSection.xhtml">
+                    <ui:param name="pageJsfBean" value="#{fnPortalRolEmpresarialJsfBean}"/>
+                    <ui:param name="targetTableId" value="dttResultadoPortalRolEmpresarial"/>
+                    <ui:param name="fileName" value="PortalRolEmpresarial"/>
+                    <ui:param name="exportToExcel" value="true"/>
+                    <ui:param name="exportToPdf" value="true"/>
+                </ui:decorate>
+            </p:toolbar>
+        </f:facet>
+        <h:panelGrid id="pngCriteriaPortalRolEmpresarial" columns="2" styleClass="dialog"
+                     columnClasses="filter-col, filter-col">
+             
+             <h:outputLabel for="selPortal" value="#{messages.label_portal_rol}:"/>
+		        <p:selectOneMenu id="selPortal" value="#{jsfBean.filter.idPortal}"
+		                         panelStyle="width:150px"
+		                         effect="fade"
+		                         style="width:160px">
+		            <f:selectItem itemLabel="#{messages.label_portal_all}" itemValue=""/>
+		            <f:selectItems value="#{jsfBean.lstPortalRsls}" var="por"
+		                           itemLabel="#{por.descripcion}"
+		                           itemValue="#{por.idPortal}"/>
+		        </p:selectOneMenu>
+                 
+            <h:outputLabel for="txtDescripcionRol" value="#{messages.label_descripcion_rol}:"/>
+            <p:inputText id="txtDescripcionRol" size="20" maxlength="250"
+                         value="#{jsfBean.filter.descripcion}">
+            </p:inputText> 
+            
+        </h:panelGrid>
+        <h:panelGrid columns="2">
+            <p:commandButton value="#{messages.label_search}" icon="ui-icon-search"
+                             actionListener="#{jsfBean.findAction}"
+                             rendered="#{viewInfoMgr.idComponentList.contains('cmbBuscarRol')}"
+                             ajax="true"/>
+
+            <p:commandButton value="#{messages.label_clean}" icon="ui-icon-refresh"
+                             process="@none"
+                             actionListener="#{jsfBean.cleanAction}"
+                             ajax="true"/>
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="pnlResultPortalRolEmpresarial" toggleable="false" toggleSpeed="250"
+             styleClass="gridContent">
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_fnRolEmpresarial_resultado}"/>
+            <h:outputText value=" (#{messages.label_records} : #{jsfBean.resultListSize})" styleClass="resultHeader"/>
+        </f:facet>
+        <p:toolbar styleClass="actions-toolbar">
+            <p:toolbarGroup align="left">
+                <p:commandButton id="cmbNuevoPortalRolEmpresarial" value="#{messages.label_nuevo}" icon="ui-icon-newwin"
+                                 actionListener="#{jsfBean.showNewDialogAction}" ajax="true">
+                    <f:attribute name="dlgWv" value="wvPortalRolEmpresarial"/>
+                </p:commandButton>
+            </p:toolbarGroup>
+            <ui:decorate template="/pages/sections/dataExporterToolBarGroupSection.xhtml">
+                <ui:param name="align" value="right"/>
+				<ui:param name="targetTableId" value="dttResultadoPortalRolEmpresarial" />
+				<ui:param name="fileName" value="PortalRolEmpresarial"/>
+                <ui:param name="exportToCsv" value="true"/>
+                <ui:param name="exportToExcel" value="true"/>
+                <ui:param name="exportToPdf" value="true"/>
+            </ui:decorate>
+        </p:toolbar>
+        <p:dataTable id="dttResultadoPortalRolEmpresarial" value="#{jsfBean.resultList}"
+                     var="rolEmpresarial"
+                     rowKey="#{rolEmpresarial.idPortalRolEmpresarial}"
+                     emptyMessage="#{messages.label_no_records_found1}"
+                     selection="#{jsfBean.selectedRows}"
+                     resizableColumns="false"
+                     paginator="#{jsfBean.showablePaginator}"
+                     paginatorPosition="bottom"
+                     paginatorTemplate="#{messages.label_dataTable_rows_per_page} {RowsPerPageDropdown} | {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} | #{messages.label_dataTable_jump_to_Page} {JumpToPageDropdown}"
+                     rowsPerPageTemplate="#{jsfBean.initRowsPerResultPage},10,25,50"
+                     rows="#{jsfBean.initRowsPerResultPage}"
+                     style="width:100%">
+            <p:column selectionMode="multiple" style="width:3%" exportable="false"/>
+            <p:column sortBy="#{rolEmpresarial.portal}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_portal}"/>
+                </f:facet>
+                <h:outputText value="#{rolEmpresarial.portal}"/>
+            </p:column>
+            <p:column sortBy="#{rolEmpresarial.descripcion}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_descripcion}"/>
+                </f:facet>
+                <h:outputText value="#{rolEmpresarial.descripcion}"/>
+            </p:column>
+            <p:column sortBy="#{rolEmpresarial.descripcionCorta}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_descripcion_corta}"/>
+                </f:facet>
+                <h:outputText value="#{rolEmpresarial.descripcionCorta}"/>
+            </p:column>
+            
+            <p:column sortBy="#{rolEmpresarial.orden}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_orden}"/>
+                </f:facet>
+                <h:outputText value="#{rolEmpresarial.orden}"/>
+            </p:column>
+           
+            <p:column style="width:4%" exportable="false">
+                <p:commandButton id="cmbView" icon="ui-icon-zoomin" title="View"
+                                 actionListener="#{jsfBean.showViewDialogAction}">
+                    <f:attribute name="dlgWv" value="wvPortalRolEmpresarial"/>
+                    <f:attribute name="selectedRow" value="#{rolEmpresarial}"/>
+                </p:commandButton>
+                <p:commandButton id="cmbEdit" icon="ui-icon-pencil" title="Edit"
+                                 actionListener="#{jsfBean.showEditDialogAction}">
+                    <f:attribute name="dlgWv" value="wvPortalRolEmpresarial"/>
+                    <f:attribute name="selectedRow" value="#{rolEmpresarial}"/>
+                </p:commandButton>
+                <p:commandButton id="cmbDelete" icon="ui-icon-minus" title="Delete"
+                                 onclick="wvConfirmDelete.show()">
+                    <f:setPropertyActionListener value="#{rolEmpresarial}" target="#{jsfBean.selectedRow}"/>
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+    </p:panel>
+</ui:composition>

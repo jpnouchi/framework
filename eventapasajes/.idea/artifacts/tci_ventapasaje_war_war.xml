@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tci-ventapasaje-war:war">
+    <output-path>$PROJECT_DIR$/tci-ventapasaje-war/target</output-path>
+    <root id="archive" name="tci-ventapasaje.war.war">
+      <element id="artifact" artifact-name="tci-ventapasaje-war:war exploded" />
+    </root>
+  </artifact>
+</component>

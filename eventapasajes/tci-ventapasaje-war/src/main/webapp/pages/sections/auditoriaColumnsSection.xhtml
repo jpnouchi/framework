@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:column sortBy="#{bean.creadoPor}" styleClass="auditoriaColumn" style="min-width:30px; max-width:40px">
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_auditoria_creadoPor}"/>
+        </f:facet>
+        <h:outputText value="#{bean.creadoPor}"/>
+    </p:column>
+    <p:column sortBy="#{bean.fechaCreacion}" styleClass="auditoriaColumn" style="min-width:70px; max-width:100px">
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_auditoria_created_date}"/>
+        </f:facet>
+        <h:outputText value="#{bean.fechaCreacion}">
+            <f:convertDateTime pattern="#{messages.label_app_timeFormat}" type="date"/>
+        </h:outputText>
+    </p:column>
+    <p:column sortBy="#{bean.modificadoPor}"  styleClass="auditoriaColumn" style="min-width:30px; max-width:40px">
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_auditoria_modificadoPor}"/>
+        </f:facet>
+        <h:outputText value="#{bean.modificadoPor}"/>
+    </p:column>
+    <p:column sortBy="#{bean.fechaModificacion}" styleClass="auditoriaColumn" style="min-width:70px; max-width:100px">
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_auditoria_modified_date}"/>
+        </f:facet>
+        <h:outputText value="#{bean.fechaModificacion}">
+            <f:convertDateTime pattern="#{messages.label_app_timeFormat}" type="date"/>
+        </h:outputText>
+    </p:column>
+
+</ui:composition>

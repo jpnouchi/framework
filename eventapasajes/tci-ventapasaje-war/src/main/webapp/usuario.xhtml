@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<p:dialog id="dlgCliente"
+		header="#{messages[jsfBean.dlgHeaderLabel]} #{messages.label_portal}"
+		modal="true" widgetVar="wvCliente" resizable="true"
+		dynamic="true" showEffect="fade" hideEffect="fade" width="500"
+		height="320">
+		<p:ajax event="close" global="false" immediate="true" process="@this"
+			listener="#{jsfBean.handleCloseDlg}" />
+		<p:blockUI block="frmCliente" blocked="true"
+			rendered="#{jsfBean.readOnly}" />
+		<p:panel toggleable="false" toggleSpeed="250">
+			<ui:decorate template="/pages/sections/auditoriaDataSection.xhtml">
+				<ui:param name="bean" value="#{jsfBean.clienteVm}" />
+			</ui:decorate>
+		</p:panel>
+
+		<h:form id="frmCliente" prependId="true">
+			<h:panelGrid columns="5" rendered="#{not jsfBean.readOnly}">
+				<p:commandButton id="cmbGrabar" value="#{messages.label_save}"
+					actionListener="#{jsfBean.saveAction}" icon="ui-icon-copy"
+					update="pnlCliente" ajax="true">
+					<f:attribute name="dlgWv" value="wvCliente" />
+				</p:commandButton>
+				<p:commandButton value="#{messages.label_close}"
+					onclick="wvCliente.hide()" immediate="true" process="@this"
+					icon="ui-icon-close">
+				</p:commandButton>
+				<h:outputLabel value="#{messages.label_leyenda_camposObligatorios}"
+					styleClass="leyenda-campoRequerido" />
+			</h:panelGrid>
+			<p:panel id="pnlCliente" toggleable="false" toggleSpeed="250">
+				<h:panelGrid id="pngCliente" columns="2" styleClass="dialog"
+					columnClasses="columna, columna">
+					<h:outputLabel styleClass="required_field" for="txtNombre"
+						value="#{messages.label_nombre_usuario_cesar}:" />
+					<h:panelGroup>
+						<p:inputText id="txtNombre" size="50" maxlength="50"
+							required="true" value="#{jsfBean.clienteVm.usuario}" />
+					</h:panelGroup>
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</p:dialog>
+</ui:composition>

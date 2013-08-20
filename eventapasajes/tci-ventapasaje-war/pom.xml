@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.tci.ventapasaje</groupId>
+		<artifactId>tci-ventapasaje</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <groupId>com.tci.ventapasaje</groupId>
+    <artifactId>tci-ventapasaje-war</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <name>TCI - Portal Venta de Pasajes WAR</name>
+	<description>TCI - Portal Venta de Pasajes - Modulo WAR</description>
+    <properties>
+        <java.version>1.6</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- TCI Core web-->
+        <dependency>
+            <groupId>com.tci.core</groupId>
+            <artifactId>tci-core-web</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- TCI Domain Module -->
+        <dependency>
+            <groupId>com.tci.ventapasaje</groupId>
+            <artifactId>tci-ventapasaje-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+      
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>2.0.14</version>
+        </dependency>
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>thymeleaf-spring3</artifactId>
+            <version>2.0.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>blitzer</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>hessian</artifactId>
+            <version>3.1.5</version>
+        </dependency>
+
+	    <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.9</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+			<groupId>tci.net.pe.framework</groupId>
+            <artifactId>el-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+			<groupId>tci.net.pe.framework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>tci.net.pe.framework</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <build>
+        <finalName>tci-ventapasaje.war</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <!--warSourceExcludes>WEB-INF/lib/*.jar</warSourceExcludes-->
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <!-- <configuration> <webXml>target/web.xml</webXml> </configuration> -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <tasks>
+                                <copy file="src/main/appctx/applicationContext-datasource-jta.xml"
+                                      tofile="src/main/resources/META-INF/spring/applicationContext-datasource.xml" overwrite="true"/>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outxml>true</outxml>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>spring-aspects</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <printSummary>false</printSummary>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <excludes>
+                        <exclude>**/*_Roo_*</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+            <!-- IDE -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.7</version>
+                <!-- Note 2.8 does not work with AspectJ aspect path -->
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                    <wtpversion>2.0</wtpversion>
+                    <additionalBuildcommands>
+                        <buildCommand>
+                            <name>org.eclipse.ajdt.core.ajbuilder</name>
+                            <arguments>
+                                <aspectPath>org.springframework.aspects</aspectPath>
+                            </arguments>
+                        </buildCommand>
+                        <buildCommand>
+                            <name>org.springframework.ide.eclipse.core.springbuilder</name>
+                        </buildCommand>
+                    </additionalBuildcommands>
+                    <additionalProjectnatures>
+                        <projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+                        <projectnature>com.springsource.sts.roo.core.nature</projectnature>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <downloadSources>false</downloadSources>
+                    <dependenciesAsLibraries>true</dependenciesAsLibraries>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.0.1.v20110908</version>
+                <configuration>
+                    <webAppConfig>
+                        <contextPath>/${project.name}</contextPath>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>tciDev</id>
+            <activation>
+                <property>
+                    <name>tciDev</name>
+                </property>
+            </activation>
+            <build>
+                <filters>
+                    <filter>src/main/env/framework-dev.properties</filter>
+                </filters>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>process-sources</phase>
+                                <configuration>
+                                    <tasks>
+                                        <copy file="src/main/appctx/applicationContext-datasource-local.xml"
+                                              tofile="src/main/resources/META-INF/spring/applicationContext-datasource.xml" overwrite="true"/>
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:toolbarGroup align="#{align}">
+            <p:commandLink ajax="false" rendered="#{exportToCsv}">
+                 <p:graphicImage value="../../resources/images/csv.png" width="22px" height="22px"
+                                 title="#{messages.label_export_csv_result}"/>
+                 <p:dataExporter type="csv" target="#{targetTableId}" fileName="#{fileName}" encoding="CP1252"/>
+             </p:commandLink>
+
+             <p:commandLink ajax="false" rendered="#{exportToExcel}">
+                 <p:graphicImage value="../../resources/images/excel.png" width="22px" height="22px"
+                                 title="#{messages.label_export_xls_result}"/>
+                 <p:dataExporter type="xls" target="#{targetTableId}" fileName="#{fileName}" encoding="UTF-8"/>
+             </p:commandLink>
+
+             <p:commandLink ajax="false" rendered="#{exportToPdf}">
+                 <p:graphicImage value="../../resources/images/pdf.png" width="22px" height="22px"
+                                 title="#{messages.label_export_pdf_result}"/>
+                 <p:dataExporter type="pdf" target="#{targetTableId}" fileName="#{fileName}" encoding="CP1252"/>
+             </p:commandLink>
+    </p:toolbarGroup>
+
+</ui:composition>

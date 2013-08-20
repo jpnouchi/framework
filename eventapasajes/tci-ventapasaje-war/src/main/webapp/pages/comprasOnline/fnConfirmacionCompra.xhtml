@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:param name="jsfBean" value="#{fnConfirmacionCompraJsfBean}"/>
+    <p:spacer width="5" height="20" />
+    <h:outputLabel value="#{messages.label_title_paso3}" style="color:#2d2f3b; font-size:15px;font-weight: bold;"/>
+
+    <p:panel id="pnlConfirmacionCompraAcciones" toggleable="true" toggleOrientation="vertical"
+             toggleSpeed="250">
+        <p:commandButton value="#{messages.label_enviarCorreo}"
+                         process="@none"
+                         update=":frmMain :pnlMenu"
+                         actionListener="#{jsfBean.dirigirPasoConfirmacionCompra}"
+                         ajax="true"
+        />
+        <p:spacer width="20" height="10" />
+        <p:commandButton value="#{messages.label_imprimir}"
+                         process="@none"
+                         update=":frmMain :pnlMenu"
+                         actionListener="#{jsfBean.dirigirPasoConfirmacionCompra}"
+                         ajax="true"
+        />
+    </p:panel>
+
+    <p:panel id="pnlConfirmacionCompraResultado" header="#{messages.label_header_Resultado_Compra}"
+             toggleable="true" toggleOrientation="vertical"
+             toggleSpeed="250">
+
+        <h:panelGrid columns="1" >
+                <h:outputText value="#{messages.label_panel_operacion_exito}" style="text-align:center;color:#2d2f3b; font-size:15px;font-weight:bold;max-width: 100%;"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2" >
+            <h:outputText value="#{jsfBean}" style="text-align:center;color:#2d2f3b; font-size:15px;font-weight:bold;"/>
+        </h:panelGrid>
+
+    </p:panel>
+
+
+
+
+
+</ui:composition>

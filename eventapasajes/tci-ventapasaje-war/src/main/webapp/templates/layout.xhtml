@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html"
+        locale="#{viewInfoMgr.selectedIdioma.codIdioma}_US">
+<h:head>
+    <title><ui:insert name="title"></ui:insert> .: Portal #{messages.label_sigla_empresa} :.</title>
+    <ui:insert name="header">
+        <ui:include src="header.xhtml"/>
+        <ui:include src="sessionTimeOut.xhtml"/>
+        <ui:include src="../pages/fninfousuario.xhtml"/>
+    </ui:insert>
+
+    <script type="text/javascript">
+        window.onload = init;
+        function expandedMenuIfApply() {
+            var menuIsExpanded = jQuery('div.ui-panelmenu-content.ui-widget-content.ui-helper-hidden').is(':visible');
+            if (!menuIsExpanded) {
+                jQuery(".ui-panelmenu-content").css("display","block"); //shows the menuitems
+                jQuery(".ui-panelmenu-header").addClass("ui-state-active"); //sets the submenu header to active state
+                jQuery(".ui-icon-triangle-1-e").removeClass("ui-icon-triangle-1-e").addClass("ui-icon-triangle-1-s"); //sets the triangle icon to "expaned" version
+//                jQuery('.ui-panelmenu-panel a').first().click();
+            }
+        }
+        function init() {
+            setMessagesToChangePassword();
+            expandedMenuIfApply();
+        }
+
+        labelMuySegura = "";
+        labelSegura = "";
+        labelMediana = "";
+        labelDebil = "";
+        function setMessagesToChangePassword() {
+            labelMuySegura = '#{messages.label_password_muy_segura}';
+            labelSegura = '#{messages.label_password_segura}';
+            labelMediana = '#{messages.label_password_mediana}';
+            labelDebil = '#{messages.label_password_debil}';
+        }
+        loadPrimefacesLocales();
+</script>
+</h:head>
+<h:body>
+<ui:include src="/pages/base/modalPanels.xhtml"/>
+<ui:decorate template="/pages/base/customMessage.xhtml">
+    <ui:param name="jsfBean" value="#{jsfBean}"/>
+</ui:decorate>
+<p:layout fullPage="true" widgetVar="wvLayout" collapseTitle="#{messages.label_layout_collapse}"
+          expandTitle="#{messages.label_layout_expand}">
+    <p:layoutUnit id="top" position="north" closable="false"
+                  collapsible="false">
+        <p:layout fullPage="false">
+            <p:layoutUnit id="layoutRoles" position="center" collapsible="false" >
+                <table width="100%" border="0" cellpadding="0">
+
+                    <h:form id="rolForm">
+                       <tr>
+                           <td width="100%">
+                               <p:tabView id="roles" activeIndex="#{viewInfoMgr.activeRolIndex}"
+                                          styleClass="rol_empresarial_tab"
+                                          dynamic="true">
+                                   <p:ajax event="tabChange" listener="#{viewInfoMgr.changeRol}"
+                                           oncomplete="expandedMenuIfApply();"
+                                           update=":pnlMenu :frmMain :rolForm:roles"/>
+                                   <c:forEach items="#{viewInfoMgr.rolList}" var="rol">
+                                       <p:tab id="rol_#{rol.idRol}" title="#{rol.descripcionCortaUp}">
+                                       </p:tab>
+                                   </c:forEach>
+                               </p:tabView>
+                           </td>
+                           <td>
+                               <p:inputText id="activeRol" type="hidden" value="#{viewInfoMgr.activeRol}"
+                                            required="false"/>
+                               <!--<p:commandButton title="#{messages.label_layout_collapse}" styleClass="toggle-icon"-->
+                                                <!--icon="ui-icon-triangle-1-n" global="false"-->
+                                                <!--onclick="wvLayout.toggle('north')"/>-->
+                           </td>
+                       </tr>
+                   </h:form>
+                </table>
+                <p:spacer width="110%" height="7px" style="background: #db241b !important; margin-left:-10px !important; "/>
+            </p:layoutUnit>
+            <p:layoutUnit position="north" collapsible="false">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr align="right">
+                        <td align="left" width="18%"  valign="top">
+                            <h:form prependId="false">
+                                <h:panelGroup>
+                                    <h1 id="logo"><a title="#{messages.label_sigla_empresa}">
+                                        <h:graphicImage alt="#{messages.label_sigla_empresa}" library="images"
+                                                        style="position: absolute;top: 2px; left: 0px;"
+                                                         value="#{viewInfoMgr.portal.logo}" height="30px"
+                                                        styleClass="banner"/> </a></h1>
+                                </h:panelGroup>
+                            </h:form>
+                        </td>
+                        <td align="left" valign="top">
+                            <table width="20%" cellpadding="0" cellspacing="0" border="0">
+                                <h:panelGrid cellpadding="0" cellspacing="0" columns="2">
+                                    <h:panelGrid cellpadding="0" cellspacing="0" columns="1">
+                                        <h:panelGroup>
+                                            <h:outputText styleClass="label-banner"
+                                                          value="#{messages.label_GrupoEmpresarial}"
+                                                          rendered="#{not empty viewInfoMgr.usuarioDTO.empresa.grupoEmpresarial}"/>
+                                            <h:outputText value="" style="width:100px; color:#ffffff;"
+                                                          rendered="#{empty viewInfoMgr.usuarioDTO.empresa.grupoEmpresarial}"/>
+                                        </h:panelGroup>
+                                        <h:outputText styleClass="label-banner"
+                                                      value="#{messages.label_Empresa}"/>
+                                    </h:panelGrid>
+                                    <h:panelGrid cellpadding="0" cellspacing="0" columns="1">
+                                        <h:panelGroup>
+                                            <p:spacer width="2px"/>
+                                            <h:outputText styleClass="label-banner" value =":" />
+                                            <p:spacer width="2px"/>
+                                            <h:outputText style="width:100px;" styleClass="text-banner"
+                                                          value="#{viewInfoMgr.usuarioDTO.empresa.grupoEmpresarial}"
+                                                          rendered="#{not empty viewInfoMgr.usuarioDTO.empresa.grupoEmpresarial}"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup>
+                                            <p:spacer width="2px"/>
+                                            <h:outputText styleClass="label-banner" value =":" />
+                                            <p:spacer width="2px"/>
+                                            <h:outputText id="txtLabelEmpresa" style="width:100px;"
+                                                          styleClass="text-banner"
+                                                          value="#{viewInfoMgr.usuarioDTO.empresa.razonSocial}"/>
+                                        </h:panelGroup>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </table>
+                        </td>
+                        <td align="right" valign="top">
+                            <h:form prependId="false">
+                                <h:panelGrid columns="11" cellspacing="0" cellpadding="0" width="100%">
+                                    <!--<h:outputLink value="/j_spring_security_logout"-->
+                                                  <!--style="position: absolute;top: 10px; left: 910px">#{messages.label_logout}</h:outputLink>-->
+                                    <!--<h:outputText value=" | " style="position: absolute;top: 10px; left: 950px"/>-->
+                                    <h:outputText value="#{messages.label_language}:" styleClass="label-banner"
+                                                  style="position: absolute; top:10px; left:1050px;"/>
+                                    <p:selectOneMenu id="idioma" value="#{viewInfoMgr.selectedIdioma.codIdioma}"
+                                                     converter="#{idiomaConverter}" effect="fade"
+                                                     style="position:absolute; top:2px; left:1112px; width: 100px;  text-align: left;">
+                                        <f:selectItems value="#{viewInfoMgr.allIdioma}" var="idioma"
+                                                       itemLabel="#{idioma.nombre}"
+                                                       itemValue="#{idioma.codIdioma}"/>
+                                        <p:ajax event="change" listener="#{viewInfoMgr.changeLanguage}"/>
+                                    </p:selectOneMenu>
+                                    <p:spacer width="2px"/>
+                                    <h:outputText styleClass="label-banner"
+                                                  style="position: absolute;top: 10px; left: 830px"
+                                                  value="#{messages.label_Bienvenido}"/>
+                                    <p:menuButton id="mnConfig" value="#{viewInfoMgr.usuarioDTO.nombres}"
+                                                  style="position: absolute; top: 2px; left:900px;">
+                                        <p:menuitem value="#{messages.label_myProfle}"
+                                                    onclick="wmisDatosDialog.show()"/>
+                                        <p:menuitem value="#{messages.label_changePassword}"
+                                                    onclick="wdlgCambioPassword2.show()"/>
+                                        <p:separator/>
+                                        <p:menuitem value="#{messages.label_myPortal}" disabled="true"
+                                                    icon="ui-icon-extlink"/>
+                                        <c:forEach items="#{viewInfoMgr.allPortal}" var="portal">
+                                            <p:menuitem value="#{portal.descripcion}" ajax="true"
+                                                        url="#{portal.path}" target="parent"/>
+                                        </c:forEach>
+                                        <p:separator/>
+                                        <p:menuitem value="#{messages.label_logout}"
+                                                    url="/j_spring_security_logout"/>
+                                    </p:menuButton>
+                                </h:panelGrid>
+                            </h:form>
+                        </td>
+                    </tr>
+                </table>
+            </p:layoutUnit>
+        </p:layout>
+    </p:layoutUnit>
+    <ui:include src="menu.xhtml"/>
+    <p:layoutUnit id="center" position="center" resizable="false">
+        <p:layout fullPage="false" widgetVar="wvContentLayout" collapseTitle="#{messages.label_layout_collapse}"
+                  expandTitle="#{messages.label_layout_expand}">
+            <p:layoutUnit position="center" size="100%" styleClass="nested-layout">
+                <ui:insert name="content"/>
+                <p:ajaxStatus onstart="wstatusDialog.show();" onsuccess="wstatusDialog.hide();"/>
+                <p:dialog modal="true" widgetVar="wstatusDialog" showHeader="false" id="statusDialog"
+                          resizable="false" draggable="false" closable="false" position="center"
+                          appendToBody="true">
+                    <p:graphicImage value="/resources/images/ajaxloadingbar.gif"/>
+                </p:dialog>
+
+                <p:confirmDialog id="cfdConfirmDelete" message="#{messages.confirm_delete_row}"
+                                              header="#{messages.label_confirm_header}" severity="alert"
+                                              widgetVar="wvConfirmDelete"
+                                              appendToBody="true">
+                                 <p:commandButton id="cmbConfirm" value="#{messages.label_si}"
+                                                  process="@this"
+                                                  actionListener="#{viewInfoMgr.currentJsfBean.deleteAction}"
+                                                  oncomplete="wvConfirmDelete.hide()"/>
+                                 <p:commandButton id="cmbDecline"
+                                                  value="#{messages.label_no}" onclick="wvConfirmDelete.hide()"
+                                                  type="button"/>
+                </p:confirmDialog>
+            </p:layoutUnit>
+            <p:layoutUnit position="south" collapsible="true" size="60" styleClass="nested-layout">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="90%">
+                            <div style="height:50px;text-align: center;">
+                                <ui:decorate template="/templates/footer.xhtml"/>
+                            </div>
+                        </td>
+                        <td width="10%">
+                            <p:commandButton title="#{messages.label_layout_collapse}" styleClass="toggle-button"
+                                             icon="ui-icon-triangle-1-s" global="false"
+                                             onclick="wvContentLayout.toggle('south')"/>
+                        </td>
+                    </tr>
+                </table>
+            </p:layoutUnit>
+        </p:layout>
+    </p:layoutUnit>
+</p:layout>
+<!--<h:outputScript library="js" name="aw-menu.js"/>-->
+<h:outputScript library="js" name="mask.js"/>
+<h:outputScript library="js" name="excanvas.js"/>
+<h:outputScript library="js" name="pwd_strength.js"/>
+</h:body>
+</f:view>
+</html>

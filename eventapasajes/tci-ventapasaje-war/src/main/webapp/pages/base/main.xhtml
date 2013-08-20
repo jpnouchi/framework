@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="../../templates/layout.xhtml">
+    <ui:define name="content">
+        <h:panelGroup layout="block">
+            <h:form id="frmMain" prependId="false">
+<!--                 Definicion de pages:-->
+<!--                 <h:panelGroup rendered="#{viewInfoMgr.page == '/pages/fnNamePage.jsf'}"> -->
+<!--                     <ui:include src="/pages/fnNamePage.xhtml"/> -->
+<!--                 </h:panelGroup> -->
+			
+			<h:panelGroup rendered="#{viewInfoMgr.page == '/pages/comprasOnline/fnFlujoCompraPaso1.jsf'}">
+                     <ui:include src="/pages/comprasOnline/fnFlujoCompraPaso1.xhtml"/>
+             </h:panelGroup>
+             
+            <h:panelGroup rendered="#{viewInfoMgr.page == '/pages/comprasOnline/fnFlujoCompraPaso2.jsf'}">
+                     <ui:include src="/pages/comprasOnline/fnFlujoCompraPaso2.xhtml"/>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{viewInfoMgr.page == '/pages/comprasOnline/fnFlujoCompraPaso3.jsf'}">
+                      <ui:include src="/pages/comprasOnline/fnFlujoCompraPaso3.xhtml"/>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{viewInfoMgr.page == '/pages/comprasOnline/fnConfirmacionCompra.jsf'}">
+                       <ui:include src="/pages/comprasOnline/fnConfirmacionCompra.xhtml"/>
+            </h:panelGroup>
+
+
+            </h:form>
+        </h:panelGroup>
+        <ui:include src="/pages/base/confirmDialogs.xhtml"/>
+    </ui:define>
+</ui:composition>
+</html>

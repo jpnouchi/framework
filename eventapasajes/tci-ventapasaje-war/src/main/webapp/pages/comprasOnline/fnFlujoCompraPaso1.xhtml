@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+                
+	<h:outputStylesheet library="css" name="tci.css"/>
+	                
+    <ui:param name="jsfBean" value="#{fnFlujoCompraPaso1JsfBean}"/>
+    
+    <p:spacer width="5" height="20" />
+    	<h:outputLabel value="#{messages.label_title_paso1}" style="color:#2d2f3b; font-size:15px;font-weight: bold;"/>
+    <p:panel id="pnlCriteriaFlujoCompraPaso1" toggleable="true" toggleOrientation="vertical"
+             toggleTitle="#{messages.label_header_fn_itinerario}"
+             toggleSpeed="250">
+        <f:facet name="header">
+            <h:outputLabel styleClass="header_title" value="#{messages.label_header_fn_itinerario}"/>
+        </f:facet>
+        <f:facet name="actions">
+            <p:toolbar styleClass="export-toolbar">
+                <ui:decorate template="/pages/sections/dataAndFiltersExporterToolBarGroupSection.xhtml">
+                    <ui:param name="pageJsfBean" value="#{fnFlujoCompraPaso1JsfBean}"/>
+                    <ui:param name="targetTableId" value="dttResultadoFlujoCompraPaso1"/>
+                    <ui:param name="fileName" value="Itinerario"/>
+                    <ui:param name="exportToExcel" value="true"/>
+                    <ui:param name="exportToPdf" value="true"/>
+                </ui:decorate>
+            </p:toolbar>
+        </f:facet>
+        
+      
+			  
+		<table>
+			<tr>
+				<td colspan="2">
+					<p:selectOneRadio id="idOpcionViaje" value="#{jsfBean.filter.opcionViaje}">  
+			            <f:selectItem itemLabel="#{messages.label_solo_ida_itinerario}" itemValue="IDA" />
+			            <f:selectItem itemLabel="#{messages.label_ida_retorno_itinerario}" itemValue="IDA_RETORNO" />
+					</p:selectOneRadio>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel for="selOrigen" value="#{messages.label_origen_itinerario}:"/>
+				</td>
+				<td>
+					<p:selectOneMenu id="selOrigen" value="#{jsfBean.filter.idCiudadOrigenLegacy}"
+		                             effect="fade" style="width:250px;">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.origenList}" var="varOrigen" itemLabel="#{varOrigen.nombre}" itemValue="#{varOrigen.idCiudadLegacy}" />
+		            </p:selectOneMenu>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel for="selDestino" value="#{messages.label_destino_itinerario}:"/>
+				</td>
+				<td>
+					<p:selectOneMenu id="selDestino" value="#{jsfBean.filter.idCiudadDestinoLegacy}"
+		                             effect="fade" style="width:250px;">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.destinoList}" var="varDestino" itemLabel="#{varDestino.nombre}" itemValue="#{varDestino.idCiudadLegacy}" />
+		            </p:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel for="calFechaSalida" value="#{messages.label_fechaSalida_itinerario}:"/>
+				</td>
+				<td>
+					<p:calendar id="calFechaSalida" size="10" maxlength="10"
+                        value="#{jsfBean.filter.fechaSalida}" navigator="true"
+                        pattern="#{messages.label_app_timeFormat}"/>
+				</td>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel for="calFechaRetorno" value="#{messages.label_fechaRetorno_itinerario}:"/>
+				</td>
+				<td>
+					<p:calendar id="calFechaRetorno" size="10" maxlength="10"
+                        value="#{jsfBean.filter.fechaRetorno}" navigator="true"
+                        pattern="#{messages.label_app_timeFormat}"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p:spacer width="5" height="5" /><h:outputLabel for="selServicio" value="#{messages.label_servicio_itinerario}:"/>
+				</td>
+				<td>
+					<p:selectOneMenu id="selServicio" value="#{jsfBean.filter.idServicioLegacy}"
+		                             effect="fade" style="width:250px;">
+		                <f:selectItem itemLabel="#{messages.label_select}" itemValue=""/>
+		                <f:selectItems value="#{jsfBean.servicioList}" var="varServicio" itemLabel="#{varServicio.nombreServicio}" itemValue="#{varServicio.idServicioLegacy}" /> 
+		            </p:selectOneMenu>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>	  
+			  
+        <h:panelGrid columns="2">
+            <p:commandButton value="#{messages.label_search}" icon="ui-icon-search"
+                             actionListener="#{jsfBean.findAction}"
+                             oncomplete="cmbResetPageDataTables.click()"
+                             rendered="#{viewInfoMgr.idComponentList.contains('btnBuscarFlujoCompraPaso1')}"
+                             ajax="true"/>
+
+            <p:commandButton value="#{messages.label_clean}" icon="ui-icon-refresh"
+                             process="@none"
+                             actionListener="#{jsfBean.cleanAction}"
+                             ajax="true"/>
+                             
+			<p:commandButton id="cmbResetPageDataTables" widget="cmbResetPageDataTables"  icon="ui-icon-refresh" style="display:none"
+                             process="@none"
+                             update="pnlResultFlujoCompraPaso1"
+                             actionListener="#{jsfBean.resetPageDataTables}"
+                             ajax="true"/>                             
+        </h:panelGrid>
+    </p:panel>
+    <p:spacer width="5" height="5" />
+    <h:panelGrid columns="1" style="padding-left:1.3em;">
+    	    <p:commandButton value="#{messages.label_formularioPaso1_irPaso2}" icon="ui-icon-refresh"
+                 process="@none"
+                 update=":frmMain :pnlMenu"
+                 actionListener="#{jsfBean.dirigirPaso2}"
+                 ajax="true"/>
+    <p:commandButton value="#{messages.label_formularioPaso1_irPaso3}" icon="ui-icon-refresh"
+                     process="@none"
+                     update=":frmMain :pnlMenu"
+                     actionListener="#{jsfBean.dirigirPasoConfirmacionCompra}"
+                     ajax="true"/>
+    <p:spacer width="5" height="12" />                         
+    </h:panelGrid>
+                         
+    <p:panel id="pnlResultFlujoCompraPaso1" toggleable="false" styleClass="gridContent">
+             
+      <p:panel id="pnlResultIdaFlujoCompraPaso1" toggleable="false" toggleSpeed="250" styleClass="gridContent">     
+        <f:facet name="header">
+            <h:outputText value="#{messages.label_panel_itinerario_ida}"/>
+            <h:outputText value=" (#{messages.label_records} : #{jsfBean.resultListSize})" styleClass="resultHeader"/>
+        </f:facet>
+        
+        <p:dataTable id="dttResultadoIdaFlujoCompraPaso1"
+					 value="#{jsfBean.itinerarioIdaModel}"
+                     var="itinerarioIda"
+                     rowKey="#{itinerarioIda.idItinerario}"
+                     emptyMessage="#{messages.label_no_records_found1}"
+                     selection="#{jsfBean.selectedItinerarioIda}"
+                     resizableColumns="false"
+                     paginator="#{jsfBean.showablePaginatorIda}"
+                     paginatorPosition="bottom"
+                     paginatorTemplate="#{messages.label_dataTable_rows_per_page} {RowsPerPageDropdown} | {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} | #{messages.label_dataTable_jump_to_Page} {JumpToPageDropdown}"
+                     rowsPerPageTemplate="#{jsfBean.initRowsPerResultPage},10,25,50"
+                     rows="#{jsfBean.initRowsPerResultPage}"
+                     style="width:100%"
+                     >
+            
+            <p:ajax event="rowSelectRadio" listener="#{jsfBean.onRowSelectItinerarioIda}"/>
+            
+            <p:column selectionMode="single" style="width:3%" exportable="false" />
+            
+            <p:column sortBy="#{itinerarioIda.origen}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_origenDestino}"/>
+                </f:facet>
+                <h:outputText value="#{itinerarioIda.origen} - #{itinerarioIda.destino}"/>
+            </p:column>
+            <p:column sortBy="#{itinerarioIda.servicio}" styleClass="columnLeftTopClass"
+                      style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_servicio}"/>
+                </f:facet>
+                <h:outputText value="#{itinerarioIda.servicio}"/>
+            </p:column>
+            <p:column sortBy="#{itinerarioIda.fechaSalida}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_fechaSalida}"/>
+                </f:facet>
+                <h:outputText value="#{itinerarioIda.fechaSalida}"/>
+            </p:column>
+            <p:column sortBy="#{itinerarioIda.numeroAsientoLibre}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_asientosLibres}"/>
+                </f:facet>
+                <h:outputText value="#{itinerarioIda.numeroAsientoLibre}"/>
+            </p:column>
+            <p:column sortBy="#{itinerarioIda.precioPiso1}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_precioPiso1}"/>
+                </f:facet>
+                <h:outputText value="#{jsfBean.showLabelPrice(itinerarioIda.precioPiso1)}"/>
+            </p:column>
+            <p:column sortBy="#{itinerarioIda.precioPiso2}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+                <f:facet name="header">
+                    <h:outputText value="#{messages.label_table_column_precioPiso2}"/>
+                </f:facet>
+                <h:outputText value="#{jsfBean.showLabelPrice(itinerarioIda.precioPiso2)}"/>
+            </p:column>
+        </p:dataTable>
+    	</p:panel>
+    	
+    	<p:spacer width="5" height="10" />
+    	
+    	 <p:panel id="pnlResultRetornoFlujoCompraPaso1" toggleable="false" toggleSpeed="250"
+             styleClass="gridContent" rendered="#{jsfBean.resultListRetornoSize>0}">
+	        <f:facet name="header">
+	            <h:outputText value="#{messages.label_panel_itinerario_retorno}"/>
+	            <h:outputText value=" (#{messages.label_records} : #{jsfBean.resultListRetornoSize})" styleClass="resultHeader"/>
+	        </f:facet>
+	        <p:dataTable id="dttResultadoRetornoFlujoCompraPaso1"
+						 value="#{jsfBean.itinerarioRetornoModel}"
+	                     var="itinerarioRetorno"
+	                     rowKey="#{itinerarioRetorno.idItinerario}"
+	                     emptyMessage="#{messages.label_no_records_found1}"
+	                     selection="#{jsfBean.selectedItinerarioRetorno}"
+	                     resizableColumns="false"
+	                     paginator="#{jsfBean.showablePaginatorRetorno}"
+	                     paginatorPosition="bottom"
+	                     paginatorTemplate="#{messages.label_dataTable_rows_per_page} {RowsPerPageDropdown} | {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} | #{messages.label_dataTable_jump_to_Page} {JumpToPageDropdown}"
+	                     rowsPerPageTemplate="#{jsfBean.initRowsPerResultPage},10,25,50"
+	                     rows="#{jsfBean.initRowsPerResultPage}"
+	                     style="width:100%"
+	                     >
+
+	            <p:column selectionMode="single" style="width:3%" exportable="false" />
+	            
+	            <p:ajax event="rowSelectRadio" listener="#{jsfBean.onRowSelectItinerarioRetorno}"  />
+	            
+	            <p:column sortBy="#{itinerarioRetorno.origen}" styleClass="columnLeftTopClass"
+	                      style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_origenDestino}"/>
+	                </f:facet>
+	                <h:outputText value="#{itinerarioRetorno.origen} - #{itinerarioRetorno.destino}"/>
+	            </p:column>
+	            <p:column sortBy="#{itinerarioRetorno.servicio}" styleClass="columnLeftTopClass"
+	                      style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_servicio}"/>
+	                </f:facet>
+	                <h:outputText value="#{itinerarioRetorno.servicio}"/>
+	            </p:column>
+	            <p:column sortBy="#{itinerarioRetorno.fechaSalida}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_fechaSalida}"/>
+	                </f:facet>
+	                <h:outputText value="#{itinerarioRetorno.fechaSalida}"/>
+	            </p:column>
+	            <p:column sortBy="#{itinerarioRetorno.numeroAsientoLibre}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_asientosLibres}"/>
+	                </f:facet>
+	                <h:outputText value="#{itinerarioRetorno.numeroAsientoLibre}"/>
+	            </p:column>
+	            <p:column sortBy="#{itinerarioRetorno.precioPiso1}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_precioPiso1}"/>
+	                </f:facet>
+	                <h:outputText value="#{jsfBean.showLabelPrice(itinerarioRetorno.precioPiso1)}"/>
+	            </p:column>
+	            <p:column sortBy="#{itinerarioRetorno.precioPiso2}" styleClass="columnRighTopClass" style="min-width:100px; max-width:200px">
+	                <f:facet name="header">
+	                    <h:outputText value="#{messages.label_table_column_precioPiso2}"/>
+	                </f:facet>
+	                <h:outputText value="#{jsfBean.showLabelPrice(itinerarioRetorno.precioPiso2)}"/>
+	            </p:column>
+	        </p:dataTable>
+    	</p:panel>
+
+    	    
+    </p:panel>
+    <p:spacer width="5" height="5" />
+    <h:panelGrid columns="1" style="padding-left:1.3em;">
+	    <p:commandButton value="#{messages.label_formularioPaso1_irPaso2}" icon="ui-icon-refresh"
+	                 process="@none"
+	                 update=":frmMain :pnlMenu"
+	                 actionListener="#{jsfBean.dirigirPaso2}"
+	                 ajax="true"/>
+    </h:panelGrid>
+</ui:composition>

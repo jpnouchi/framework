@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.tci.ventapasaje</groupId>
+		<artifactId>tci-ventapasaje</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>tci-ventapasaje-domain</artifactId>
+	<version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>TCI - Venta de Pasajes Domain</name>
+    <description>TCI - Venta de Pasajes Domain</description>
+
+    <properties>
+        <java.version>1.6</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>3.1.2.RELEASE</spring.version>
+    </properties>
+
+    <repositories>
+         <!--<repository>
+            <id>prime-repo</id>
+            <url>http://repository.primefaces.org</url>
+            <name>PrimeFaces Maven Repository</name>
+        </repository>
+       
+		<repository>
+            <id>tcipublic</id>
+            <url>http://svn-aw:8081/nexus/content/repositories/tcipublic</url>
+        </repository>
+		-->
+    </repositories>
+	<dependencies>
+        <!-- TCI Core Domain-->
+        <dependency>
+            <groupId>com.tci.core</groupId>
+            <artifactId>tci-core-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+		
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.20</version>
+        </dependency>
+		
+		<dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.9</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>tci.net.pe.framework</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+		
+
+    </dependencies>
+
+
+    <build>
+        <finalName>tci-ventapasaje-domain-1.0.0</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <!--warSourceExcludes>WEB-INF/lib/*.jar</warSourceExcludes-->
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <!-- <configuration> <webXml>target/web.xml</webXml> </configuration> -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>jars</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <tasks>
+                                <copy file="target/tci-ventapasaje-domain-1.0.0.jar"
+                                      tofile="../tci-ventapasaje-war/src/test/resources/WEB-INF/lib/tci-ventapasaje-domain-1.0.0.jar" overwrite="true"/>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

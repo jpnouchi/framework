@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+<p:dialog id="misDatosDialog" header="#{messages.fnempresa_dlgRolPerfil_titulo}" modal="true"
+          widgetVar="wmisDatosDialog" dynamic="true"
+          width="900" height="240"
+          resizable="true"
+          showEffect="fade" hideEffect="fade">
+<p:ajax event="close" global="false" listener="#{infoUsuarioBean.handleDialogClose}"/>
+<f:facet name="header">
+    <h:outputFormat value="#{messages.fninfousuario_title}" />
+</f:facet>
+<h:form  prependId="false">
+    <h:panelGrid columns="2">
+        <p:commandButton value="#{messages.label_close}" onclick="wmisDatosDialog.hide()"
+                         immediate="true" process="@none"/>
+    </h:panelGrid>
+
+    <p:panel header="#{messages.fninfousuario_header}" toggleable="true" toggleSpeed="250">
+        <h:panelGrid  columns="6" styleClass="dialog" columnClasses="col1, col2, col1,col2, col1, col2">
+            <h:outputLabel value="#{messages.fninfousuario_apellidosNombre}"/>
+            <p:inputText readonly="true" disabled="true"
+                         value="#{infoUsuarioBean.usuario.nombres}"/>
+            <h:outputLabel value="#{messages.fninfousuario_usuarioPortal}"/>
+            <p:inputText readonly="true" disabled="true"
+                         value="#{infoUsuarioBean.usuario.login}"/>
+            <h:outputLabel value="#{messages.fninfousuario_usuarioERP}"/>
+            <p:inputText readonly="true" disabled="true"
+                         value="#{infoUsuarioBean.usuario.loginERP}"/>
+            <h:outputLabel value="#{messages.fninfousuario_email}"/>
+            <p:inputText readonly="true" disabled="true"
+                         value="#{infoUsuarioBean.usuario.email}"/>
+            <h:outputLabel styleClass="col1"  value="#{messages.fnempresa_filtro_codigoTributario}"/>
+            <p:inputText size="13" disabled="true"
+                             value="#{infoUsuarioBean.usuario.empresa.codigoEmpresa}"
+                             readonly="true"/>
+            <h:outputLabel styleClass="col1"  value="#{messages.fnempresa_filtro_razonSocial}"/>
+            <p:inputText readonly="true" size="45"
+                             disabled="true"
+                             value="#{infoUsuarioBean.usuario.empresa.razonSocial}"/>
+            
+             <h:outputLabel value="#{messages.fninfousuario_grupoEmpresarial}"/>
+            <p:inputText disabled="true"
+                         value="#{infoUsuarioBean.usuario.empresa.grupoEmpresarial}"
+                         readonly="true"/>
+        </h:panelGrid>
+    </p:panel>
+</h:form>
+</p:dialog>
+
+<p:dialog id="dlgCambioPassword2" header="#{messages.label_cambio_password}"
+          modal="true" widgetVar="wdlgCambioPassword2" resizable="false"
+          showEffect="fade" appendToBody="true" width="400"  closable="false">
+    <p:ajax event="close" global="false" listener="#{loginNuevoBeanJsfBean.handleDialogClose}" update=":formCambioPassword2:pnlCambioPassword2"/>
+    <h:form id="formCambioPassword2" prependId="false">
+        <p:panel id="pnlCambioPassword2" widgetVar="wpnlCambioPassword2" toggleable="false" toggleSpeed="250" style="align:center" >
+            <table border="0">
+                <tr>
+                    <td colspan="2">
+                        <p:toolbar styleClass="actions-toolbar">
+                            <p:toolbarGroup align="left">
+                                <p:commandButton actionListener="#{loginNuevoBeanJsfBean.actualizarPassword}" value="#{messages .label_button_change_password}"
+                                                 update=":dlgMessageErrorsCambioPassword2">
+                                    <f:attribute name="origenCambio" value="portal"/>
+                                </p:commandButton>
+                                <p:commandButton value="#{messages.label_cancel}" type="button" onclick="wdlgCambioPassword2.hide();" />
+                            </p:toolbarGroup>
+                        </p:toolbar>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style2"><h:outputText value="#{messages.property_user}" styleClass="columna"/> *</label></td>
+                    <td><h:inputText  value="#{loginNuevoBeanJsfBean.user}"
+                                      disabled="true"  />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style2"><h:outputText value="#{messages.property_oldPassword}" styleClass="columna"/> *</label></td>
+                    <td><p:password   value="#{loginNuevoBeanJsfBean.oldPassword}" redisplay="true" feedback="false"
+                                      disabled="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style2"><h:outputText value="#{messages.property_newPassword}" styleClass="columna"/> *</label></td>
+                    <td><p:password   value="#{loginNuevoBeanJsfBean.newPassword}" redisplay="true" feedback="false" onkeyup="runPassword('#{loginNuevoBean.user}', this.value, 'pwdpassword','nivelFortaleza');" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style2"><h:outputText value="#{messages.property_confirmNewPassword}" styleClass="columna"/> *</label></td>
+                    <td><p:password    value="#{loginNuevoBeanJsfBean.confirmNewPassword}" redisplay="true" feedback="false"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <label class="style2"> <h:outputText value="#{messages.label_leyenda_camposObligatorios}" styleClass="columna"/></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div id="pwdpassword_text" style="font-size: 12px;"></div>
+                        <div id="pwdpassword_bar" style="font-size: 1px; height: 2px; width: 0px;"></div>
+                        <input type="hidden" id="nivelFortaleza" name="nivelFortaleza" />
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </p:panel>
+    </h:form>
+</p:dialog>
+
+<p:dialog id="dlgMessageErrorsCambioPassword2"
+          header="#{messages.label_titulo_informacion}"
+          modal="true" widgetVar="wdlgMessageErrorsCambioPassword2" resizable="false"
+          showEffect="fade" appendToBody="true" width="250">
+    <h:panelGrid columns="1" styleClass="dialog">
+        <h:outputText value="#{loginNuevoBeanJsfBean.errores}" />
+    </h:panelGrid>
+    <br />
+    <p:commandButton value="#{messages.label_aceptar}"
+                     onclick="wdlgMessageErrorsCambioPassword2.hide()" type="button" />
+</p:dialog>
+
+<h:outputScript library="js" name="pwd_strength.js"/>
+
+</ui:composition>
+
+</html>

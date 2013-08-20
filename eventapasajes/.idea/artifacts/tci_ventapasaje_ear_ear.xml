@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="tci-ventapasaje-ear:ear">
+    <output-path>$PROJECT_DIR$/tci-ventapasaje-ear/target</output-path>
+    <root id="archive" name="${tci.earname}.ear">
+      <element id="artifact" artifact-name="tci-ventapasaje-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

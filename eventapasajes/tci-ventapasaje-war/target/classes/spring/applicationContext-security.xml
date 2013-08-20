@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:util="http://www.springframework.org/schema/util">
+
+
+    <bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy">
+        <sec:filter-chain-map path-type="ant">
+            <sec:filter-chain pattern="/**" filters="
+                httpSessionContextFilter,
+                logoutFilter,
+                concurrencyFilter,
+                authenticationProcessingFilter,
+                exceptionTranslationFilter,
+                filterSecurityInterceptor"/>
+        </sec:filter-chain-map>
+    </bean>
+
+    <!-- 1. HttpSessionContextIntegration Filter -->
+    <bean id="httpSessionContextFilter"
+          class="org.springframework.security.web.context.HttpSessionContextIntegrationFilter"/>
+
+    <!-- 2. Logout Filter, login.jsf success url -->
+    <bean id="logoutFilter"
+          class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <constructor-arg value="/login.jsf"/>
+        <constructor-arg>
+            <list>
+                <bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 3. AuthenticationProcessing Filter -->
+    <bean id="authenticationProcessingFilter"
+          class="com.tci.seguridad.service.TciAuthenticationFilter">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="sessionAuthenticationStrategy" ref="sas"/>
+        <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
+        <property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
+        <property name="postOnly" value="false"/>
+    </bean>
+
+    <bean id="tciAuthenticationProvider" class="com.tci.seguridad.TciAuthenticationProviderImpl">
+    </bean>
+
+    <bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+        <property name="providers">
+            <list>
+                <ref bean="tciAuthenticationProvider"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--<bean id="userDetailService" class="com.test.common.MyUserDetailService">-->
+    <!--<property name="userProperties">-->
+    <!--<util:properties location="classpath:users.properties"/>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="authenticationFailureHandler"
+          class="com.tci.ventas.pasaje.security.AuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/login.jsf?authFailure=err"/>
+    </bean>
+
+    <bean id="tciRedirectStrategy" class="com.tci.seguridad.TciRedirectStrategy">
+    </bean>
+
+    <bean id="securityService" class="com.tci.seguridad.service.impl.SecurityServiceImpl">
+    </bean>
+    <bean id="securityInfoService" class="com.tci.seguridad.service.impl.SecurityInfoServiceImpl">
+    </bean>
+
+
+    <bean id="authenticationSuccessHandler"
+          class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/"/>
+        <property name="redirectStrategy" ref="tciRedirectStrategy"/>
+    </bean>
+
+    <!-- 4. ExceptionTranslation Filter -->
+    <bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint" ref="authenticationEntryPoint"/>
+        <property name="accessDeniedHandler" ref="accessDeniedHandler"/>
+    </bean>
+
+    <bean id="authenticationEntryPoint"
+          class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <property name="loginFormUrl" value="/login.jsf"/>
+    </bean>
+
+    <bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+        <property name="errorPage" value="/forbidden.jsf"/>
+    </bean>
+
+    <!-- 5. FilterSecurityInterceptor Filter -->
+    <bean id="filterSecurityInterceptor"
+          class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="accessDecisionManager" ref="accessDecisionManager"/>
+        <property name="securityMetadataSource" ref="mySecureResourceFilter"/>
+    </bean>
+
+    <bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <property name="decisionVoters">
+            <list>
+                <bean class="org.springframework.security.access.vote.RoleVoter"/>
+                <bean class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="mySecureResourceFilter" class="com.tci.seguridad.service.TciSecureResourceFilter">
+        <property name="urlProperties">
+            <util:properties location="classpath:META-INF/spring/urls.properties"/>
+        </property>
+    </bean>
+
+    <bean id="concurrencyFilter"
+          class="org.springframework.security.web.session.ConcurrentSessionFilter">
+        <property name="sessionRegistry" ref="sessionRegistry"/>
+        <property name="expiredUrl" value="/viewExpired.jsf"/>
+    </bean>
+
+    <bean id="sas"
+          class="com.tci.ventas.pasaje.security.SessionAuthenticationStrategy">
+        <constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <property name="maximumSessions" value="1"/>
+    </bean>
+
+    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+</beans>

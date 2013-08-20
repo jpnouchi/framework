@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tci-ventapasaje-domain/src/main/java/com/tci/ventas/pasaje/util/EntityGeneratorTemplate/META-INF/maven/org.hibernate/hibernate-tools/hibernate-tools.iml" filepath="$PROJECT_DIR$/tci-ventapasaje-domain/src/main/java/com/tci/ventas/pasaje/util/EntityGeneratorTemplate/META-INF/maven/org.hibernate/hibernate-tools/hibernate-tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tci-ventapasaje.iml" filepath="$PROJECT_DIR$/tci-ventapasaje.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tci-ventapasaje-domain/tci-ventapasaje-domain.iml" filepath="$PROJECT_DIR$/tci-ventapasaje-domain/tci-ventapasaje-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tci-ventapasaje-ear/tci-ventapasaje-ear.iml" filepath="$PROJECT_DIR$/tci-ventapasaje-ear/tci-ventapasaje-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tci-ventapasaje-war/tci-ventapasaje-war.iml" filepath="$PROJECT_DIR$/tci-ventapasaje-war/tci-ventapasaje-war.iml" />
+    </modules>
+  </component>
+</project>
+

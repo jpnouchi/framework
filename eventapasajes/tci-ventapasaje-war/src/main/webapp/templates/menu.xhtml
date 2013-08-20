@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+    <!--Version con panel menu-->
+    <p:layoutUnit id="left" position="west" size="#{viewInfoMgr.widthMenu}"
+                  resizable="true" closable="false" collapsible="true"
+                  header="#{messages.label_modules}" maxSize="#{viewInfoMgr.widthMenu}"
+                  style="padding-top:4px;">
+        <p:panel id="pnlMenu">
+            <h:form id="frmMenu">
+                <p:panelMenu model="#{viewInfoMgr.currentRol.rolMenuModel}"></p:panelMenu>
+            </h:form>
+        </p:panel>
+    </p:layoutUnit>
+</ui:composition>
+</html>

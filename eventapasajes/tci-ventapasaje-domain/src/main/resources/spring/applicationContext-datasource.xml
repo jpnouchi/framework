@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	- Application context definition for data access layer.
+	- Accessed by business layer objects defined in "applicationContext.xml"
+	- (see web.xml's "contextConfigLocation").
+	-
+	- This version of the data access layer works on two databases (main/order),
+	- using JNDI DataSources with JtaTransactionManager. It obviously depends on
+	- JTA support in the container, and on pre-configured container DataSources.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
+       xmlns:util="http://www.springframework.org/schema/util">
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+    <bean id="dataSourceWeb" parent="parentDataSource" 
+    class="org.springframework.jndi.JndiObjectFactoryBean"
+    >
+		<property name="jndiName">
+            <value>java:jboss/datasources/dsVentaPasaje</value>
+        </property>
+        <property name="resourceRef">
+            <value>true</value>
+        </property>
+    </bean>
+    
+    <bean id="dataSourceLegacy" parent="parentDataSource"
+    	class="org.springframework.jndi.JndiObjectFactoryBean"
+    >
+        <property name="jndiName">
+            <value>java:jboss/datasources/dsVentaPasajeLegacy</value>
+        </property>
+        <property name="resourceRef">
+            <value>true</value>
+        </property>
+    </bean>
+    
+    
+    <bean id="parentDataSource"
+    	 class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+         abstract="true">
+	</bean>
+ 
+ 
+	 <bean id="dataSource" class="com.tci.ventas.pasaje.domain.model.infraestructure.CustomerRoutingDataSource">
+	   <property name="targetDataSources">
+	      <map key-type="com.tci.ventas.pasaje.domain.enums.CustomerTypeEnum">
+	         <entry key="VENTAS_ONLINE" value-ref="dataSourceWeb"/>
+	         <entry key="VENTAS_LEGACY" value-ref="dataSourceLegacy"/>
+	      </map>
+	   </property>
+	   <property name="defaultTargetDataSource" ref="dataSourceWeb"/>
+	</bean>
+ 
+  
+ 	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager" >
+ 	</bean>
+  
+   
+    <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
+    <bean id="transactionAttributes"
+          class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+        <property name="properties">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+                <prop key="find*">readOnly</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionAttributeSource" ref="transactionAttributes"/>
+    </bean>
+    
+
+    <bean id="defaultTxProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="interceptorNames" value="transactionInterceptor"/>
+        <property name="beanNames" value="*ServiceImpl"/>
+    </bean>
+    <!-- 
+    <jee:jndi-lookup id="entityManagerFactory"
+                     jndi-name="com/tci/ventaPasajeEntityManagerFactory"
+                     lookup-on-startup="false"
+                     expected-type="javax.persistence.EntityManagerFactory"/>
+      -->
+                      
+     <bean id="entityManagerFactory"
+    	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    	<property name="jpaVendorAdapter" ref="vendorAdapter" />
+    	<property name="dataSource" ref="dataSource" />
+   		<property name="jpaPropertyMap">
+	        <map>
+	            <entry key="javax.persistence.transactionType" value="jta" />	
+	            <entry key="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+	            
+	        </map>
+	    </property>
+    </bean>            
+
+    <bean class="org.springframework.orm.hibernate4.HibernateExceptionTranslator"/>
+
+    <bean id="vendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="databasePlatform" value="org.hibernate.dialect.MySQLMyISAMDialect"/>
+   		<property name="showSql" value="true" />
+   		<property name="generateDdl" value="true" />
+    </bean>
+    
+	
+    <jpa:repositories base-package="com.tci.ventas.pasaje.domain.model"/>
+   
+    
+</beans>

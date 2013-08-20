@@ -1,0 +1,617 @@
+/* Headers*/
+.ui-widget-header {
+    background: #900000 url(../resources/images/ui-bg_highlight-hard_60_035c87_1x100.png);
+}
+
+.ui-widget-header a {
+    color: #ffffff;
+}
+
+.ui-state-default.ui-state-error{
+    border: 1px solid #900000 !important;
+}
+
+/* Panel */
+/* Panel Header*/
+.ui-panel .ui-panel-titlebar /*Panel Header*/
+, .ui-dialog .ui-dialog-titlebar  /*Dialog Header*/
+, .ui-datatable .ui-datatable-header  /*Datatable Header*/
+, .ui-layout-unit-header     /*Layout Unit Header*/
+{
+    height: 16px !important;
+    border: 1px solid #c7c7c9 !important;
+    /*background:#dbdbdd url(../resources/images/panelBackground.jpg) !important;*/
+    background:#b2b3b5 !important;
+    color:#2d2f3b;
+    font-size:12px;
+}
+
+.ui-panel .ui-panel-content {
+    background: #f5f5f5 repeat scroll 0 0;
+    border: 0 none;
+    padding: 0.5em 1em;
+    overflow: auto;
+}
+
+.ui-panel .ui-panel-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0.1em 16px 0.2em 0;
+}
+
+.ui-panel .ui-icon-minusthick{
+    background-position: 0 -16px; ;
+    height: 15px !important;
+    width: 15px !important;
+}
+
+.ui-panel .ui-icon-plusthick{
+    background-position: -16px -80px;
+}
+
+/* DataTable Column Header*/
+.ui-datatable .ui-sortable-column,
+.ui-state-default.ui-selection-column,
+.ui-datatable th.ui-state-default {
+    background: #828282 !important;
+    border: 1px solid #afadad !important;
+    color:white !important;
+}
+
+/*datatable record Checkbok*/
+/*.ui-selection-column{*/
+    /*background: white !important;*/
+/*}*/
+
+/*Panel Menu Items*/
+.ui-panelmenu .ui-menuitem-link{
+    color:black !important;
+}
+
+.ui-menu-state-active,
+.ui-panelmenu .ui-menuitem-link.ui-state-active{
+    background: #FCF0B2 !important;
+}
+
+.ui-panelmenu .ui-menuitem-link.ui-state-hover{
+    background: #f6f6f6 !important;
+}
+
+/*Button*/
+
+/*<p:menuButton>*/
+/*.ui-button[type = "button"], */
+.ui-button[type="reset"],
+.ui-button[type="submit"],
+.ui-input[type="reset"], .ui-input[type="submit"], .ui-input[type="button"]
+{
+    color:white;
+    cursor:pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none !important;
+    background: #b2b3b5 !important;
+    border:1px solid #7f7f7f !important;
+    /*background: url("../resources/images/ui-bg_highlight-hard_60_035c87_1x100.png") repeat-x scroll 50% 50% #DFEFFC !important;*/
+    /*background-image: url(../resources/images/gradientButton.gif);*/
+}
+
+/*Paginator*/
+.ui-paginator {
+    background: #b6b6b6 !important;
+    /*background: #f5f5f5 !important;*/
+    border: 1px solid #d9d9d9;
+    color: black;
+    width:100% !important;
+}
+
+.ui-paginator-rpp-options, .ui-paginator-jtp-select {
+    background:white !important;
+    border:1px solid #c7b6b6 !important;
+}
+
+.ui-paginator .ui-state-disabled{
+    border:none !important;
+}
+
+.ui-paginator .ui-state-default{
+    border:1px solid #c7b6b6;
+}
+
+.ui-paginator .ui-state-hover{
+    background:white !important;
+    color: #a30034;
+}
+
+.ui-paginator .ui-state-active{
+   border:1px solid #d9d9d9;
+    color: #a30034;
+   font-weight:bold;
+}
+
+.ui-paginator .ui-paginator-page{
+    color: #a30034;
+    border:1px solid #c7b6b6;
+}
+
+.ui-paginator-pages,
+.ui-paginator-bottom{
+    background:white;
+}
+
+/*Resizer of Layout*/
+.ui-layout-resizer-south, .ui-layout-resizer-north{
+    left:97% !important;
+    border:none;
+    border: 0px !important;
+    margin: 0px !important;
+}
+
+/*Layout*/
+.ui-layout-north .ui-layout-unit-content
+,.ui-layout-north{
+    overflow: visible !important;
+    margin:0px;
+    padding:0px;
+     background: #7f7f7f !important;
+    color: #faffff !important;
+    border: none;
+
+}
+
+.ui-layout-north .ui-layout-unit-content table tr{
+    background: #7f7f7f !important;
+    /*color: #f3f3f3 !important;*/
+    color: #faffff !important;
+    font-width: bold;
+}
+
+#layoutRoles{
+    background: #7f7f7f !important;
+    border:none !important;
+    border-color: #7f7f7f !important;
+    margin-bottom:-2px !important;
+}
+
+.ui-tabs .ui-tabs-panel{
+    margin:0px;
+    padding:0px;
+    border-color: #7f7f7f !important;
+    background: #f5f5f5 !important;
+    border:none !important;
+}
+
+/*FileUpload*/
+.ui-fileupload, .ui-fileupload .ui-widget-header{
+    background:#f5f5f5 !important;
+     border:none;
+}
+
+.ui-fileupload-upload-button{
+    border:none;
+    background:#f5f5f5 !important;
+}
+
+.ui-fileupload .ui-widget-header{
+    paddin:0;
+    margin:-2px 0 -2px 0;
+    background: white;
+}
+
+.ui-fileupload .ui-widget-header .ui-icon-plusthick{
+   background-position: -32px -128px;
+}
+
+.simple-file-upload .fileupload-content {
+    border-top-width: 0;
+    padding: 0.2em 0.4em;
+    display:none;
+}
+
+/*Dialog*/
+.ui-dialog-title {
+    float: left;
+    margin: 0.3em 16px 0.1em 0;
+    font-size: 13px;
+}
+
+/*Custom style for Fieldset(Advanced Filters)*/
+.ui-fieldset-toggleable.advancedFilters .ui-fieldset-legend{
+    background:#f5f5f5 !important;
+    border:none;
+    padding:0;
+    margin-left:10px;
+    color: black;
+    float:right;
+    left: -0.1px;
+    top: -0.75em;
+}
+
+.ui-fieldset-toggleable.advancedFilters{
+    background:#f5f5f5 !important;
+    padding:0 2px 2px 0px;
+    margin:4px 0 2px 0;
+    position:relative;
+}
+
+/*Custom TabView (Rol Empresarial Tab)*/
+.ui-tabs.rol_empresarial_tab .ui-tabs-nav,
+.ui-tabs.rol_empresarial_tab,
+.ui-tabs-nav.rol_empresarial_tab{
+    background: #7f7f7f !important;
+    border:none !important;
+    border-color: #7f7f7f !important;
+    font-size:11px;
+    height:10px; border:none; padding:1px 0 1px 0 !important; margin:-7px -40px 0 0 !important;
+}
+
+.ui-tabs.rol_empresarial_tab .ui-state-default{
+    background:#7f7f7f;
+    color: white;
+    border-color:#7f7f7f;
+}
+
+.rol_empresarial_tab .ui-state-default a:link{
+    color: #faffff;
+    font-weight:bold;
+    font-size:12px;
+	text-decoration: none;
+}
+
+.rol_empresarial_tab .ui-state-active a:link{
+    color: #ffffff;
+    background:black !important;
+    font-weight:bold;
+    font-size:12px;
+	text-decoration: none;
+}
+
+.rol_empresarial_tab .ui-state-hover a:link{
+    color: #ffffff;
+    background:black !important;
+    font-weight:bold;
+    font-size:12px;
+	text-decoration:none;
+}
+
+/*Custom Style for toolbar*/
+.export-toolbar{
+    /*background:#dbdbdd url(../resources/images/panelBackground.jpg) !important;*/
+    background:#b2b3b5 !important;
+    width: 40px !important;
+    margin:0 4px 0px 4px !important;
+    padding:0 0 0 0 !important;
+    height: 14px !important;
+    float: right;
+    border: none;
+}
+
+/*Custom Toggle Button*/
+.ui-button[type="submit"].toggle-button{
+    background:#f3f3f3 !important;
+    float:right !important; width:17px; height:17px; bottom:2px !important;
+    border:none !important;
+}
+
+.toggle-button.ui-button[type="submit"].ui-state-hover{
+    background: url("../resources/images/bg-hover-toggle-button.png") repeat-x scroll 50% 50% #f8f8f8 !important;
+}
+
+.toggle-button.ui-button[type="submit"].ui-state-hover .ui-icon{
+    background-image: url(../resources/images/ui-icons_cd0a0a_256x240.png);
+}
+
+/*Varios*/
+.ui-accordion .ui-accordion-content {
+    margin-top: -1px;
+    overflow: hidden;
+    padding: 0 3px 0 5px;
+}
+
+.ui-menu .ui-menuitem-link {
+    width: 96%;
+}
+
+.ui-menu-dynamic {
+/*corrige el problema del MenuButton que se oculta en una pantalla modal*/
+    z-index: 2000 !important;
+}
+
+.ui-carousel-header .ui-carousel-header-title {
+    width: 50%;
+}
+
+.ui-toolbar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.gridContent .ui-panel-content {
+    text-align: left;
+}
+
+.ui-growl {
+    position: fixed;
+    top: 40%;
+    right: 40%;
+    width: 301px;
+    z-index: 9999;
+}
+
+.ui-state-disabled {
+    background-image: none;
+    opacity: 0.9 !important;
+    -moz-opacity: 0.9 !important;
+    filter: alpha(opacity = 90) !important;
+}
+
+ul.ui-menu-list {
+/*width: 290px;*/
+    width: 100%;
+    position: static;
+}
+
+
+/*.ui-picklist .ui-picklist-list {*/
+    /*height: 200px;*/
+    /*list-style-type: none;*/
+    /*margin: 0;*/
+    /*overflow: auto;*/
+    /*padding: 0;*/
+    /*width: 395px;*/
+/*}*/
+
+/*
+ui-layout-unit ui-widget ui-widget-content ui-corner-all
+ui-layout-south nested-layout ui-layout-pane ui-layout-pane-south
+*/
+
+/*
+.ui-layout-resizer ui-layout-resizer-south ui-layout-resizer-closed ui-layout-resizer-south-closed ui-widget-content ui-corner-all
+*/
+
+/*.ui-widget{*/
+	/*font-family: Arial;*/
+	 /*de 1 a 1.4em, incluido decimales*/
+    /*font-size: 1em;*/
+/*}*/
+
+/*.ui-state-default*/
+/*,.ui-widget-header .ui-state-default     Tabs Menu Superior Izquierdo*/
+/*,.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default*/
+/*{*/
+	/*background:#dfeffc url("../resources/images/ui-bg_glass_55_fbd4d0_1x400.png");*/
+/*}*/
+
+ /*Textos: Elementos defeult*/
+/*.ui-state-default a*/
+/*.ui-state-default a:link*/
+/*, .ui-state-default a:visited*/
+/*{*/
+    /*color: #2e6e9e;*/
+	/*text-decoration: none;*/
+/*}*/
+
+ /*Texto: Resultado de Busqueda */
+/*.noRecordsFoundClass{*/
+    /*color: #004040;*/
+    /*font:12px Arial;*/
+/*}*/
+
+/*.ui-paginator {*/
+    /*color: #008888;*/
+    /*background:white !important;*/
+     /*border: 1px solid #008888;*/
+
+/*}*/
+
+ /*states and images */
+/*.ui-icon { width: 16px; height: 16px; background-image: url(../resources/images/ui-icons_72b42d_256x240.png); }*/
+/*.ui-widget-content .ui-icon {background-image: url(../resources/images/ui-icons_72b42d_256x240.png); }*/
+/*.ui-widget-header .ui-icon {background-image: url(../resources/images/ui-icons_ffffff_256x240.png); }*/
+/*.ui-state-default .ui-icon { background-image: url(../resources/images/ui-icons_ffffff_256x240.png); }*/
+
+/*, .ui-state-focus .ui-icon */
+
+/*.State Hover Icon Button(reset, submit)*/
+.ui-button[type="reset"].ui-state-hover .ui-icon,
+.ui-button[type="submit"].ui-state-hover .ui-icon,
+.ui-widget-content .ui-state-hover .ui-icon button
+/*.State default Icon Button(reset, submit)*/
+/*, .ui-button[type="reset"].ui-state-default .ui-icon,*/
+/*.ui-button[type="submit"].ui-state-default .ui-icon,*/
+/*.ui-widget-content .ui-state-default .ui-icon button*/
+/*.State default Icon Sortable Column of Datatable*/
+, .ui-sortable-column.ui-state-default .ui-icon
+{
+    background-image: url(../resources/images/ui-icons_ffffff_256x240.png);
+}
+
+.ui-state-hover{
+    background: #1a97c7;
+}
+
+.ui-button[type="reset"].ui-state-hover,
+.ui-button[type="submit"].ui-state-hover,
+.ui-widget-content .ui-state-hover .ui-widget button
+{
+    border: 1px solid #b2b3b5;
+    background: #7f7f7f;
+    /*font-weight: normal;*/
+    color: #f8f8f8;
+    background: url("../resources/images/ui-button-bg.png") repeat-x scroll 50% 50% #7f7f7f !important;
+
+    /*box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;*/
+	/*moz-box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;*/
+	/*webkit-box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;*/
+}
+/*.ui-state-active .ui-icon {background-image: url(../resources/images/ui-icons_004040_256x240.png); }*/
+/*.ui-state-highlight .ui-icon {background-image: url(../resources/images/ui-icons_4eb305_256x240.png); }*/
+/*.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(../resources/images/ui-icons_cd0a0a_256x240.png); }*/
+
+
+/*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #45930b; background: #004040 url(../resources/images/ui-bg_highlight-hard_80_004040_1x100.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }*/
+/*.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #ffffff; text-decoration: none; }*/
+/*.ui-state-hover,*/
+/*.ui-widget-content .ui-state-hover,*/
+/*.ui-widget-header .ui-state-hover,*/
+/*.ui-state-focus,*/
+/*.ui-widget-content .ui-state-hover,*/
+/*.ui-widget-header .ui-state-focus*/
+
+/*.ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited { color: #ffffff; text-decoration: none; }*/
+/*.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #004040; background: #d8d9c6 url(../resources/images/ui-bg_highlight-hard_100_d8d9c6_1x100.png) 50% 50% repeat-x; font-weight: normal; color: #004040; }*/
+/*.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #004040; text-decoration: none; }*/
+/*.ui-state-default.ui-state-error{*/
+    /*border: 1px solid #900000; !important;*/
+/*}*/
+
+/*.ui-button[type = "button"], .ui-button[type="reset"], .ui-button[type="submit"]*/
+/*,.ui-input[type="reset"], .ui-input[type="submit"], .ui-input[type="button"]*/
+/*{*/
+    /*color:white;*/
+    /*cursor:pointer;*/
+    /*font-family: Arial;*/
+    /*font-weight: bold;*/
+     /*background-image: url(../resources/images/gradientButton.gif); */
+/*}*/
+
+ /*Headers Componentes */
+/*.ui-widget-header{ background:#035c87 url(../resources/images/ui-bg_highlight-hard_60_035c87_1x100.png);*/
+/*}*/
+/*.ui-widget-header a { color: #ffffff; }*/
+
+
+/*Default:      .ui-accordion .ui-accordion-header*/
+/*Hover:      , .ui-accordion .ui-accordion-header a:hover*/
+/*.ui-accordion .ui-state-default{*/
+   /*background:#035c87 url(../resources/images/ui-bg_highlight-hard_60_035c87_1x100.png);*/
+   /*color: white !important;*/
+/*}*/
+
+/*.ui-accordion .ui-state-active{*/
+   /*background:#D1E2E5;*/
+   /*color: white !important;*/
+   /*font-weight: bold;*/
+/*}*/
+
+/*.ui-accordion .ui-state-hover*/
+/*{*/
+  /*background:#8AAEC9;*/
+  /*color: white !important;*/
+   /*font-weight: bold;*/
+/*}*/
+
+/*.ui-menu .ui-state-hover{*/
+    /*background: none repeat scroll 0 0 #D6E1EC !important;*/
+    /*color: black !important;*/
+/*}*/
+
+/*li.ui-menuitem.ui-state-hover a{*/
+    /*background: none repeat scroll 0 0 #D6E1EC !important;*/
+    /*color: black !important;*/
+    /*font-weight: bold;*/
+     /*border: 1px solid #004040;*/
+/*}*/
+
+/*li.ui-menuitem a{*/
+    /*background: none repeat scroll 0 0 #BCFBFC !important;*/
+    /*color: black !important;*/
+    /*border: 1px solid #D6E1EC;*/
+/*}*/
+
+/*.ui-menuitem-link {*/
+    /*background: none repeat scroll 0 0 #BCFBFC !important;*/
+    /*color: black !important;*/
+/*}*/
+
+/*.ui-menu-state-active {*/
+    /*background: none repeat scroll 0 0 #E1FFFF !important;*/
+    /*color: black !important;*/
+    /*font-weight: bold !important;*/
+/*}*/
+
+
+/*.ui-widget .ui-widget{font-size: 7em;}*/
+
+
+ /*.ui-widget select, .ui-widget textarea , .ui-widget button*/
+/*{*/
+	/*font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;*/
+	/*font-size: 0.1em;*/
+/*}*/
+
+  /*Textos: Elementos Activos*/
+/*.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited*/
+/*{*/
+	/*color: yellow;*/
+	/*text-decoration: none;*/
+/*}*/
+
+
+ /*Background InputFields */
+/*.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield*/
+/*{*/
+    /*background:white;*/
+    /*color: black;*/
+	/*box-shadow: inset 0 2px 2px #008888;*/
+	/*moz-box-shadow: inset 0 2px 2px #008888;*/
+	/*webkit-box-shadow: inset 0 2px 2px #008888;*/
+/*}*/
+
+/*.labelEmpresaClass{*/
+    /*font-size:1.4em;*/
+    /*font-width: bold;*/
+/*}*/
+
+/*Texto del Banner Empresa*/
+/*h1.labelBanner{*/
+   /*margin:1em auto 1em 10em;*/
+   /*color:white;*/
+   /*font:30px bold Arial;*/
+   /*text-decoration:underline;*/
+/*}*/
+
+/*Legend de Fieldset*/
+/*.ui-fieldset-toggleable .ui-fieldset-legend{*/
+    /*background: url("../resources/images/ui-bg_highlight-hard_80_6fa3a7_1x100.png");*/
+    /*border:none;*/
+    /*padding:0;*/
+    /*margin-left:-20px;*/
+    /*color: black;*/
+/*}*/
+
+/*.ui-fieldset-toggleable{*/
+    /*padding:0;*/
+    /*margin:0;*/
+/*}*/
+
+ /*Bordes Cajas de Texto*/
+.ui-inputfield.ui-state-focus,
+.ui-widget-content .ui-inputfield.ui-state-focus,
+.ui-widget-header .ui-inputfield.ui-state-focus
+{
+	box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;
+	moz-box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;
+	webkit-box-shadow: 0px 0px 5px #b2b3b5, inset 0 2px 2px #b2b3b5;
+}
+
+/* State Buttons
+
+.ui-button.ui-state-default {
+background-color: red !important;
+}
+.ui-button.ui-state-hover {
+background-color: green !important;
+}
+.ui-button.ui-state-active {
+background-color: blue !important;
+}
+
+*/
+
+/*Content of Select*/
+/*.ui-selectonemenu-panel .ui-widget-content{*/
+    /*width: 100%;*/
+    /*background:yellow !important;*/
+/*}*/

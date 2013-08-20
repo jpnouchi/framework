@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<module version="4" relativePaths="false" type="J2EE_WEB_MODULE"> 
+  <component name="NewModuleRootManager"> 
+    <exclude-output/>  
+    <orderEntry type="inheritedJdk"/>  
+    <!-- output url="file://$$MODULE_DIR$$/${maven.build.dest}"/ -->  
+    <!-- output-test url="file://$$MODULE_DIR$$/${maven.test.dest}"/ -->  
+    <content url="file://$MODULE_DIR$"> 
+      <!-- sourceFolder url="file://$$MODULE_DIR$$/${pom.build.sourceDirectory}" isTestSource="false"/ -->  
+      <!-- sourceFolder url="file://$$MODULE_DIR$$/${pom.build.testSourceDirectory}" isTestSource="true"/ -->  
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true"/>
+      <excludeFolder url="file://$MODULE_DIR$/target"/>
+    </content>  
+    <orderEntry type="sourceFolder" forTests="false"/>  
+    <!-- Next include each dependency:
+      <orderEntry type="module" module-name="${dep.artifactId}"/>
+      <orderEntry type="module-library">
+        <library name="${dep.artifactId}">
+          <CLASSES>
+            <root url="jar://${lib.path}!/"/>
+          </CLASSES>
+          <JAVADOC/>
+          <SOURCES/>
+        </library>
+      </orderEntry>
+     -->  
+    <output url="file://$MODULE_DIR$/target/classes"/>
+    <output-test url="file://$MODULE_DIR$/target/test-classes"/>
+    <orderEntry type="module-library">
+      <library name="commons-fileupload">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="servlet-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/servlet-api/2.5/servlet-api-2.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="guava">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/guava/14.0.1/guava-14.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="el-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/el-api/2.2/el-api-2.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-test">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-test/3.1.2.RELEASE/spring-test-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="blitzer">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/blitzer/1.0.9/blitzer-1.0.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hessian">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hessian/3.1.5/hessian-3.1.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="thymeleaf-spring3">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/thymeleaf-spring3/2.0.14/thymeleaf-spring3-2.0.14.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tci-core-web">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/com/tci/core/tci-core-web/1.0.0/tci-core-web-1.0.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tci-core-domain">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/com/tci/core/tci-core-domain/1.0.0/tci-core-domain-1.0.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-lang3/3.0.1/commons-lang3-3.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-collections">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-collections/3.2/commons-collections-3.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-context">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-aop">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-aspects">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-aspects/3.1.2.RELEASE/spring-aspects-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-ws-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-ws-core/2.1.2.RELEASE/spring-ws-core-2.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-data-jpa">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-data-jpa/1.2.0.RELEASE/spring-data-jpa-1.2.0.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-core/4.1.10.Final/hibernate-core-4.1.10.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-entitymanager">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-entitymanager/4.1.10.Final/hibernate-entitymanager-4.1.10.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-jpa-2.0-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-validator">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-tools">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-tools/4.0.0-CR1/hibernate-tools-4.0.0-CR1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="validation-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cglib-nodep">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="quartz">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/quartz/1.6.3/quartz-1.6.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mail">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/mail/1.4.4/mail-1.4.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/poi/3.7/poi-3.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="itext">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/itext/2.1.7/itext-2.1.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jasperreports">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jasperreports/4.8.0/jasperreports-4.8.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-security-config">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-security-config/3.0.7.RELEASE/spring-security-config-3.0.7.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/log4j/1.2.16/log4j-1.2.16.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/slf4j-api/1.6.2/slf4j-api-1.6.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-log4j12">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/slf4j-log4j12/1.6.2/slf4j-log4j12-1.6.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-beans">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-asm">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-context-support">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-context-support/3.1.2.RELEASE/spring-context-support-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-data-commons-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-data-commons-core/1.4.0.RELEASE/spring-data-commons-core-1.4.0.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-expression">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-jdbc">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-jdbc/3.1.2.RELEASE/spring-jdbc-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-orm">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-orm/3.1.2.RELEASE/spring-orm-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-oxm">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-oxm/3.1.3.RELEASE/spring-oxm-3.1.3.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-security-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-security-core/3.0.7.RELEASE/spring-security-core-3.0.7.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-security-web">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-security-web/3.0.7.RELEASE/spring-security-web-3.0.7.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-tx">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-tx/3.1.2.RELEASE/spring-tx-3.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-web">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-web/3.1.3.RELEASE/spring-web-3.1.3.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-webmvc">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-webmvc/3.1.3.RELEASE/spring-webmvc-3.1.3.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spring-xml">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/spring-xml/2.1.2.RELEASE/spring-xml-2.1.2.RELEASE.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="hibernate-commons-annotations">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="aspectjrt">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/aspectjrt/1.6.12/aspectjrt-1.6.12.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-lang/2.5/commons-lang-2.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="aopalliance">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/aopalliance/1.0/aopalliance-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="activation">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/activation/1.1/activation-1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ant">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/ant/1.6.5/ant-1.6.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="antlr">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/antlr/2.7.7/antlr-2.7.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="aspectjweaver">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bcmail-jdk14">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bcprov-jdk14">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bctsp-jdk14">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="castor">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/castor/1.2/castor-1.2.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commands">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commands/3.3.0-I20070605-0010/commands-3.3.0-I20070605-0010.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="common">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/common/3.2.0-v20060603/common-3.2.0-v20060603.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-beanutils">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-codec">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-codec/1.3/commons-codec-1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-digester">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-digester/2.1/commons-digester-2.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-logging">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-logging/1.1.1/commons-logging-1.1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-pool">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-pool/1.5.4/commons-pool-1.5.4.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="contenttype">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/contenttype/3.2.100-v20070319/contenttype-3.2.100-v20070319.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="dom4j">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/dom4j/1.6.1/dom4j-1.6.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freemarker">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/freemarker/2.3.8/freemarker-2.3.8.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="geronimo-stax">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/geronimo-stax/api_1.0_spec-1.0/geronimo-stax-api_1.0_spec-1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jackson-annotations">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jackson-annotations/2.0.5/jackson-annotations-2.0.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jackson-core">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jackson-core/2.0.5/jackson-core-2.0.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jackson-databind">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jackson-databind/2.0.5/jackson-databind-2.0.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="javassist">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/javassist/3.16.1-GA/javassist-3.16.1-GA.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-logging">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-transaction-api_1.1_spec">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jcl-over-slf4j">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jcommon">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jcommon/1.0.15/jcommon-1.0.15.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jdtcore">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jdtcore/3.1.0/jdtcore-3.1.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jfreechart">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jfreechart/1.0.12/jfreechart-1.0.12.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jobs">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jobs/3.3.0-v20070423/jobs-3.3.0-v20070423.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jta">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jta/1.1/jta-1.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jtidy">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/jtidy/r8-20060801/jtidy-r8-20060801.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="myfaces-impl">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/myfaces-impl/2.1.3/myfaces-impl-2.1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ognl">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/ognl/3.0.5/ognl-3.0.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="osgi">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/osgi/3.3.0-v20070530/osgi-3.3.0-v20070530.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-ooxml">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/poi-ooxml/3.7/poi-ooxml-3.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-ooxml-schemas">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/poi-ooxml-schemas/3.7/poi-ooxml-schemas-3.7.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="preferences">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/preferences/3.2.100-v20070522/preferences-3.2.100-v20070522.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="registry">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/registry/3.3.0-v20070522/registry-3.3.0-v20070522.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/runtime/3.2.0-v20060603/runtime-3.2.0-v20060603.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="stax-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/stax-api/1.0.1/stax-api-1.0.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="text">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/text/3.2.0-v20060605-1400/text-3.2.0-v20060605-1400.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="wsdl4j">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/wsdl4j/1.6.1/wsdl4j-1.6.1.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xmlbeans">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/xmlbeans/2.3.0/xmlbeans-2.3.0.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="myfaces-api">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/myfaces-api/2.1.3/myfaces-api-2.1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="primefaces">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/primefaces/3.5/primefaces-3.5.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="junit-dep">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/junit-dep/4.9/junit-dep-4.9.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="thymeleaf">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/thymeleaf/2.0.14/thymeleaf-2.0.14.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="tci-ventapasaje-domain"/>
+    <orderEntry type="module-library">
+      <library name="commons-dbcp">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/commons-dbcp/1.3/commons-dbcp-1.3.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mysql-connector-java">
+        <CLASSES>
+          <root url="jar://C:/m2/repository/tci/net/pe/framework/mysql-connector-java/5.1.20/mysql-connector-java-5.1.20.jar!/"/>
+        </CLASSES>
+      </library>
+    </orderEntry>
+  </component>  
+  <component name="ModuleRootManager"/>  
+  <!-- If it's a war project:
+  <component name="WebModuleProperties">
+    <containerElement type="module" name="${dep.artifactId}">
+      <attribute name="method" value="1" />
+      <attribute name="URI" value="/WEB-INF/classes" />
+    </containerElement>
+    <containerElement type="library" level="module" name="${dep.artifactId}">
+      <attribute name="method" value="1" />
+      <attribute name="URI" value="/WEB-INF/lib/${dep.systemPath.name}" />
+    </containerElement>
+    <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/${pom.build.warSourceDirectory}/WEB-INF/web.xml" version="" />
+    <webroots>
+      <root url="file://$MODULE_DIR$/${pom.build.warSourceDirectory}" relative="/" />
+    </webroots>
+  </component>
+  -->  
+  <component name="WebModuleBuildComponent">
+    <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/target/tci-ventapasaje-war"/>
+  </component>
+  <component name="WebModuleProperties">
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="0"/>
+      <attribute name="URI" value="/WEB-INF/lib/servlet-api-2.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/servlet-api/2.5/servlet-api-2.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/guava-14.0.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/guava/14.0.1/guava-14.0.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="0"/>
+      <attribute name="URI" value="/WEB-INF/lib/el-api-2.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/el-api/2.2/el-api-2.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-test-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-test/3.1.2.RELEASE/spring-test-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/blitzer-1.0.9.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/blitzer/1.0.9/blitzer-1.0.9.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hessian-3.1.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hessian/3.1.5/hessian-3.1.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/thymeleaf-spring3-2.0.14.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/thymeleaf-spring3/2.0.14/thymeleaf-spring3-2.0.14.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/tci-core-web-1.0.0.jar"/>
+      <url>jar://C:/m2/repository/com/tci/core/tci-core-web/1.0.0/tci-core-web-1.0.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/tci-core-domain-1.0.0.jar"/>
+      <url>jar://C:/m2/repository/com/tci/core/tci-core-domain/1.0.0/tci-core-domain-1.0.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-lang3-3.0.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-lang3/3.0.1/commons-lang3-3.0.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-collections-3.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-collections/3.2/commons-collections-3.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-core-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-context-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-aop-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-aspects-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-aspects/3.1.2.RELEASE/spring-aspects-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-ws-core-2.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-ws-core/2.1.2.RELEASE/spring-ws-core-2.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-data-jpa-1.2.0.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-data-jpa/1.2.0.RELEASE/spring-data-jpa-1.2.0.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-core-4.1.10.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-core/4.1.10.Final/hibernate-core-4.1.10.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-entitymanager-4.1.10.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-entitymanager/4.1.10.Final/hibernate-entitymanager-4.1.10.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-validator-4.2.0.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-tools-4.0.0-CR1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-tools/4.0.0-CR1/hibernate-tools-4.0.0-CR1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/cglib-nodep-2.2.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/quartz-1.6.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/quartz/1.6.3/quartz-1.6.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/mail-1.4.4.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/mail/1.4.4/mail-1.4.4.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/poi-3.7.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/poi/3.7/poi-3.7.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/itext-2.1.7.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/itext/2.1.7/itext-2.1.7.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jasperreports-4.8.0.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jasperreports/4.8.0/jasperreports-4.8.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-security-config-3.0.7.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-security-config/3.0.7.RELEASE/spring-security-config-3.0.7.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/log4j-1.2.16.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/log4j/1.2.16/log4j-1.2.16.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/slf4j-api-1.6.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/slf4j-api/1.6.2/slf4j-api-1.6.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/slf4j-log4j12-1.6.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/slf4j-log4j12/1.6.2/slf4j-log4j12-1.6.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-beans-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-asm-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-context-support-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-context-support/3.1.2.RELEASE/spring-context-support-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-data-commons-core-1.4.0.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-data-commons-core/1.4.0.RELEASE/spring-data-commons-core-1.4.0.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-expression-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-expression/3.1.2.RELEASE/spring-expression-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-jdbc-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-jdbc/3.1.2.RELEASE/spring-jdbc-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-orm-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-orm/3.1.2.RELEASE/spring-orm-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-oxm-3.1.3.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-oxm/3.1.3.RELEASE/spring-oxm-3.1.3.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-security-core-3.0.7.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-security-core/3.0.7.RELEASE/spring-security-core-3.0.7.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-security-web-3.0.7.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-security-web/3.0.7.RELEASE/spring-security-web-3.0.7.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-tx-3.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-tx/3.1.2.RELEASE/spring-tx-3.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-web-3.1.3.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-web/3.1.3.RELEASE/spring-web-3.1.3.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-webmvc-3.1.3.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-webmvc/3.1.3.RELEASE/spring-webmvc-3.1.3.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/spring-xml-2.1.2.RELEASE.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/spring-xml/2.1.2.RELEASE/spring-xml-2.1.2.RELEASE.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/hibernate-commons-annotations-4.0.1.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/aspectjrt-1.6.12.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/aspectjrt/1.6.12/aspectjrt-1.6.12.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-lang-2.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-lang/2.5/commons-lang-2.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/aopalliance-1.0.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/aopalliance/1.0/aopalliance-1.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/activation-1.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/activation/1.1/activation-1.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/ant-1.6.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/ant/1.6.5/ant-1.6.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/antlr-2.7.7.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/antlr/2.7.7/antlr-2.7.7.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/aspectjweaver-1.6.8.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/bcmail-jdk14-1.38.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/bcprov-jdk14-1.38.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/bctsp-jdk14-1.38.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/castor-1.2.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/castor/1.2/castor-1.2.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commands-3.3.0-I20070605-0010.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commands/3.3.0-I20070605-0010/commands-3.3.0-I20070605-0010.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/common-3.2.0-v20060603.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/common/3.2.0-v20060603/common-3.2.0-v20060603.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-beanutils-1.8.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-codec-1.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-codec/1.3/commons-codec-1.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-digester-2.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-digester/2.1/commons-digester-2.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-logging/1.1.1/commons-logging-1.1.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-pool-1.5.4.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-pool/1.5.4/commons-pool-1.5.4.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/contenttype-3.2.100-v20070319.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/contenttype/3.2.100-v20070319/contenttype-3.2.100-v20070319.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/dom4j-1.6.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/dom4j/1.6.1/dom4j-1.6.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/freemarker-2.3.8.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/freemarker/2.3.8/freemarker-2.3.8.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/geronimo-stax-api_1.0_spec-1.0.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/geronimo-stax/api_1.0_spec-1.0/geronimo-stax-api_1.0_spec-1.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jackson-annotations-2.0.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jackson-annotations/2.0.5/jackson-annotations-2.0.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jackson-core-2.0.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jackson-core/2.0.5/jackson-core-2.0.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jackson-databind-2.0.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jackson-databind/2.0.5/jackson-databind-2.0.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/javassist-3.16.1-GA.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/javassist/3.16.1-GA/javassist-3.16.1-GA.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jboss-logging-3.1.0.GA.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jcl-over-slf4j-1.6.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jcommon-1.0.15.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jcommon/1.0.15/jcommon-1.0.15.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jdtcore-3.1.0.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jdtcore/3.1.0/jdtcore-3.1.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jfreechart-1.0.12.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jfreechart/1.0.12/jfreechart-1.0.12.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jobs-3.3.0-v20070423.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jobs/3.3.0-v20070423/jobs-3.3.0-v20070423.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jta-1.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jta/1.1/jta-1.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/jtidy-r8-20060801.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/jtidy/r8-20060801/jtidy-r8-20060801.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/myfaces-impl-2.1.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/myfaces-impl/2.1.3/myfaces-impl-2.1.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/ognl-3.0.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/ognl/3.0.5/ognl-3.0.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/osgi-3.3.0-v20070530.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/osgi/3.3.0-v20070530/osgi-3.3.0-v20070530.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/poi-ooxml-3.7.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/poi-ooxml/3.7/poi-ooxml-3.7.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/poi-ooxml-schemas-3.7.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/poi-ooxml-schemas/3.7/poi-ooxml-schemas-3.7.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/preferences-3.2.100-v20070522.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/preferences/3.2.100-v20070522/preferences-3.2.100-v20070522.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/registry-3.3.0-v20070522.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/registry/3.3.0-v20070522/registry-3.3.0-v20070522.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/runtime-3.2.0-v20060603.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/runtime/3.2.0-v20060603/runtime-3.2.0-v20060603.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/stax-api-1.0.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/stax-api/1.0.1/stax-api-1.0.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/text-3.2.0-v20060605-1400.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/text/3.2.0-v20060605-1400/text-3.2.0-v20060605-1400.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/wsdl4j-1.6.1.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/wsdl4j/1.6.1/wsdl4j-1.6.1.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/xmlbeans-2.3.0.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/xmlbeans/2.3.0/xmlbeans-2.3.0.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/myfaces-api-2.1.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/myfaces-api/2.1.3/myfaces-api-2.1.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/primefaces-3.5.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/primefaces/3.5/primefaces-3.5.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="0"/>
+      <attribute name="URI" value="/WEB-INF/lib/junit-dep-4.9.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/junit-dep/4.9/junit-dep-4.9.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/thymeleaf-2.0.14.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/thymeleaf/2.0.14/thymeleaf-2.0.14.jar!/</url>
+    </containerElement>
+    <containerElement type="module" name="tci-ventapasaje-domain">
+      <attribute name="method" value="5"/>
+      <attribute name="URI" value="/WEB-INF/lib/tci-ventapasaje-domain-1.0.0.jar"/>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/commons-dbcp-1.3.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/commons-dbcp/1.3/commons-dbcp-1.3.jar!/</url>
+    </containerElement>
+    <containerElement type="library" level="module">
+      <attribute name="method" value="1"/>
+      <attribute name="URI" value="/WEB-INF/lib/mysql-connector-java-5.1.20.jar"/>
+      <url>jar://C:/m2/repository/tci/net/pe/framework/mysql-connector-java/5.1.20/mysql-connector-java-5.1.20.jar!/</url>
+    </containerElement>
+    <deploymentDescriptor version="2.3" name="web.xml" optional="false" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml"/>
+    <webroots>
+      <root relative="/" url="file://$MODULE_DIR$/src/main/webapp"/>
+    </webroots>
+  </component>
+</module>

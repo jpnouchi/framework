@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html" locale="en_US">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<ui:insert name="header">
+			<ui:include src="/templates/header.xhtml" />
+		</ui:insert>
+		<link href="css/loginStyle.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+body {
+	font-size: 10px;
+}
+</style>
+	</h:head>
+	<h:body>
+		<p:layout fullPage="true">
+			<p:layoutUnit id="top" position="center" size="140">
+				<div
+					style="position: absolute; top: 250px; right: 280px; z-index: 2; font-size: 10px;">
+					<c:if test="${not empty param.authFailure}">
+						<div class="ui-message-error ui-widget ui-corner-all"
+							style="text-align: center;">#{messages.label_security_err}
+						</div>
+					</c:if>
+					<c:if test="${not empty param.authSessionjFailure}">
+						<div class="ui-message-error ui-widget ui-corner-all"
+							style="text-align: center;">
+							#{messages.label_security_dobleSession}</div>
+					</c:if>
+				</div>
+				<h:form id="loginForm" prependId="false">
+					<div id="todo">
+						<div id="cuerpo-index">
+							<div id="bannerEmpresa">
+								<h1 class="labelBanner">#{messages.label_banner_login_empresa}</h1>
+							</div>
+							<div id="labelBanner">
+								<h1 align="right">#{messages.label_app_title}</h1>
+							</div>
+							<div id="banner"></div>
+							<div id="sidebar"></div>
+							<div id="texto">
+								<div class="top">
+									<h3>
+										<a href="http://www.tci.net.pe/" target="_blank">Home</a> >
+									</h3>
+								</div>
+								<div class="testimonio-cliente">
+									<table width="250" border="0">
+										<tr>
+											<td colspan="3"><br /> <b>#{messages.label_signin}</b></td>
+											<td rowspan="7">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="2" height="20">&nbsp;</td>
+										</tr>
+										<tr>
+											<td><label><h:outputText
+														value="#{messages.property_user}" /></label></td>
+											<td><h:inputText id="j_username" name="j_username"
+													
+													
+													autocomplete="on" styleClass="input"
+													style="border:1px solid #C5DBEC; height: 15px;" /></td>
+										</tr>
+										<tr>
+											<td colspan="2" height="5"></td>
+										</tr>
+										<tr>
+											<td><label><h:outputText
+														value="#{messages.property_password}" /></label></td>
+											<td><h:inputSecret id="j_password" styleClass="input"
+													autocomplete="on"
+													
+													
+													style="border:1px solid #C5DBEC; height: 15px;" /></td>
+										</tr>
+										<tr>
+											<td colspan="2" height="5"></td>
+										</tr>
+										<tr>
+											<td><label><h:outputText
+														value="#{messages.property_portal}" /></label></td>
+											<td><p:selectOneMenu id="j_portal"
+													value="#{loginBean.selectedPortalId}"
+													
+													effect="fade" style="width:170px">
+													<f:selectItem itemLabel="Select One" itemValue="" />
+													<f:selectItems value="#{loginBean.portales}" var="portal"
+														itemLabel="#{portal.descripcion}"
+														itemValue="#{portal.idPortal}" />
+												</p:selectOneMenu></td>
+										</tr>
+										<tr>
+											<td colspan="2" height="20"></td>
+										</tr>
+										<tr>
+											<td width="62" colspan="2"><p:commandButton
+													actionListener="#{loginBean.loginAction}"
+													value="#{messages.label_login_button}" ajax="false" /></td>
+										</tr>
+									</table>
+								</div>
+								<div style=""></div>
+								<div id="acciones">
+									<div id="lnkRecuperar" style="float: left">
+										<label> <p:commandLink
+												value="#{messages.label_recuperarContrasena}" />
+										</label>
+									</div>
+									<div id="lnkNuevo" style="float: right">
+										<label> <p:commandLink
+												value="#{messages.label_crearCuenta}"
+												actionListener="#{fnClienteJsfBean.showModalNewCustomer}" />
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="copy" style="width: 68%">
+								#{messages.label_footer_login}</div>
+							<div class="redes">
+								<div align="center">
+									<a href="http://www.microsoft.com" target="_blank"><p:graphicImage
+											value="/images/iexplorer.png" width="20" height="20"
+											border="0" /></a><a href="http://www.google.com/chrome"
+										target="_blank"><p:graphicImage value="/images/chrome.png"
+											width="20" height="20" /></a><a href="http://www.firefox.com"
+										target="_blank"><p:graphicImage
+											value="/images/firefox.png" width="20" height="20" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						style="position: absolute; top: 250px; right: 280px; z-index: 2; font-size: 10px;">
+						<h:messages showDetail="false"
+							style="background-color: #FFBABA; font-weight: bold; color: #D8000C; padding-left: 15px; padding-top: 10px;padding-bottom: 10px; padding-right: 15px; border: solid 1px #D8000C; " />
+					</div>
+				</h:form>
+			</p:layoutUnit>
+		</p:layout>
+
+		<ui:decorate template="usuario.xhtml">
+			<ui:param name="jsfBean" value="#{fnClienteJsfBean}" />
+		</ui:decorate>
+
+	</h:body>
+</f:view>
+</html>

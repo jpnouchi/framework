@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:dialog id="dlgCustomMessage"
+              header="#{messages.label_titulo_informacion}"
+              modal="true" widgetVar="wvCustomMessage" resizable="false"
+              dynamic="true" width="240">
+        <p:outputPanel id="pnlCustomMessage">
+            <h:panelGrid cellpadding="0" cellspacing="0" columns="2" width="100%">
+                <h:panelGrid cellpadding="0" cellspacing="0" columns="1" width="94%">
+                    <h:outputText id="messagesStr" value="#{viewInfoMgr.messageStr}" escape="false"/>
+                </h:panelGrid>
+                <h:panelGrid cellpadding="0" cellspacing="0" columns="1" width="6%">
+                    <p:graphicImage value="../../resources/images/#{viewInfoMgr.iconMessage}.png" width="20px"
+                                    height="20px"/>
+                </h:panelGrid>
+                <h:panelGrid columns="1" styleClass="centered">
+                    <p:commandButton value="#{messages.label_aceptar}"
+                                     onclick="wvCustomMessage.hide()"/>
+                </h:panelGrid>
+            </h:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+
+</ui:composition>

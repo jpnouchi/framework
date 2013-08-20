@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd" 
+    version="2.0">
+    <application>
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+        <variable-resolver>
+            org.springframework.web.jsf.DelegatingVariableResolver
+        </variable-resolver>
+        <resource-bundle>
+            <base-name>com.tci.ventas.pasaje.jsf.i18n.messages</base-name>
+            <var>messages</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>com.tci.ventas.pasaje.jsf.i18n.errorMessages</base-name>
+            <var>errorMessages</var>
+        </resource-bundle>
+         <resource-bundle>
+            <base-name>com.tci.ventas.pasaje.recursos</base-name>
+            <var>recursos</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
+            <supported-locale>de</supported-locale>
+            <supported-locale>es</supported-locale>
+        </locale-config>
+        <resource-handler>org.primefaces.application.PrimeResourceHandler</resource-handler>
+    </application>
+    <converter>
+        <converter-id>tciConverter</converter-id>
+        <converter-class>com.tci.jsf.converter.TciJsfConverter</converter-class>
+    </converter>
+    <converter>
+        <converter-id>tciEnumConverter</converter-id>
+        <converter-class>com.tci.jsf.converter.TciEnumJsfConverter</converter-class>
+    </converter>
+    <factory>
+        <exception-handler-factory>com.tci.jsf.util.ViewExpiredExceptionExceptionHandlerFactory</exception-handler-factory>
+    </factory>
+    <lifecycle>
+        <phase-listener id="nocache">com.tci.ventas.pasaje.security.CacheControlPhaseListener</phase-listener>
+    </lifecycle>
+</faces-config>
